@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--HomeScreen-->
+        <scene sceneID="lpV-uo-Uu9">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="HomeScreen" storyboardName="HomeScreen" referencedIdentifier="HomeScreen" id="cGh-R1-hoQ" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sjV-dl-9uL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-815" y="-81"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="WHd-kE-1yg">
+            <objects>
+                <viewController storyboardIdentifier="GameScene" id="hWi-f9-EX3" customClass="ViewController" customModule="PaperTossARDay1" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="AdH-Nw-Ry2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XTE-Ar-wxZ" customClass="VirtualObjectARView" customModule="PaperTossARDay1" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GY8-D0-SCK">
+                                <rect key="frame" x="0.0" y="627" width="80" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="0Gh-UZ-3gh"/>
+                                    <constraint firstAttribute="height" constant="40" id="cX5-qq-ZkW"/>
+                                </constraints>
+                                <state key="normal" title="Add Bin"/>
+                                <connections>
+                                    <segue destination="dD2-sJ-3kf" kind="popoverPresentation" identifier="showObjects" popoverAnchorView="GY8-D0-SCK" id="1Sb-N8-5Pz">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOQ-wG-h1i">
+                                <rect key="frame" x="0.0" y="8" width="80" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="3l3-i6-P88"/>
+                                    <constraint firstAttribute="height" constant="40" id="wg5-9a-UJv"/>
+                                </constraints>
+                                <state key="normal" title="Retreat"/>
+                                <connections>
+                                    <segue destination="cGh-R1-hoQ" kind="show" id="Mz5-5N-Ie6"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="XTE-Ar-wxZ" firstAttribute="trailing" secondItem="HAU-y0-gOq" secondAttribute="trailing" id="48W-Cl-jjQ"/>
+                            <constraint firstItem="GY8-D0-SCK" firstAttribute="leading" secondItem="HAU-y0-gOq" secondAttribute="leading" id="AwV-5Y-eK3"/>
+                            <constraint firstItem="XTE-Ar-wxZ" firstAttribute="top" secondItem="AdH-Nw-Ry2" secondAttribute="top" id="BPf-Pu-rT4"/>
+                            <constraint firstItem="uOQ-wG-h1i" firstAttribute="top" secondItem="AdH-Nw-Ry2" secondAttribute="top" constant="8" id="Lb2-tW-nKo"/>
+                            <constraint firstItem="uOQ-wG-h1i" firstAttribute="leading" secondItem="HAU-y0-gOq" secondAttribute="leading" id="O9X-1n-058"/>
+                            <constraint firstItem="GY8-D0-SCK" firstAttribute="bottom" secondItem="HAU-y0-gOq" secondAttribute="bottom" id="Y3w-Tx-xsf"/>
+                            <constraint firstItem="XTE-Ar-wxZ" firstAttribute="leading" secondItem="HAU-y0-gOq" secondAttribute="leading" id="pjP-ur-jOu"/>
+                            <constraint firstItem="XTE-Ar-wxZ" firstAttribute="bottom" secondItem="HAU-y0-gOq" secondAttribute="bottom" id="sfH-ws-KKY"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HAU-y0-gOq"/>
+                    </view>
+                    <connections>
+                        <outlet property="sceneView" destination="XTE-Ar-wxZ" id="H5C-M7-7jM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2TV-1V-bUW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-103.2" y="-64.31784107946028"/>
+        </scene>
+        <!--Virtual Object Selection View Controller-->
+        <scene sceneID="eEV-NQ-744">
+            <objects>
+                <tableViewController id="dD2-sJ-3kf" customClass="VirtualObjectSelectionViewController" customModule="PaperTossARDay1" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="45" sectionHeaderHeight="28" sectionFooterHeight="28" id="Tv3-VU-zT8">
+                        <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ObjectCell" id="diE-k3-jdQ" customClass="ObjectCell" customModule="PaperTossARDay1" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="250" height="45"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="diE-k3-jdQ" id="YOI-ip-Gfa">
+                                    <rect key="frame" x="0.0" y="0.0" width="250" height="44.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NCe-e0-nWh">
+                                            <rect key="frame" x="0.0" y="0.0" width="250" height="44"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="6eP-13-hoI">
+                                                <rect key="frame" x="0.0" y="0.0" width="250" height="44"/>
+                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qxw-Uy-yBE">
+                                                        <rect key="frame" x="8" y="7" width="234" height="30"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </view>
+                                            <vibrancyEffect>
+                                                <blurEffect style="extraLight"/>
+                                            </vibrancyEffect>
+                                        </visualEffectView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="objectTitleLabel" destination="Qxw-Uy-yBE" id="WiS-Hi-Y82"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="dD2-sJ-3kf" id="VbJ-1K-xwt"/>
+                            <outlet property="delegate" destination="dD2-sJ-3kf" id="NiC-6F-2lA"/>
+                        </connections>
+                    </tableView>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="250" height="250"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yWl-6J-JI4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="649.60000000000002" y="17.991004497751124"/>
+        </scene>
+    </scenes>
+</document>
