@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2555A89D1FB510C9009959FE /* score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2555A89C1FB510C9009959FE /* score.swift */; };
+		2555A8A11FB5112F009959FE /* ScoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2555A8A01FB5112F009959FE /* ScoreController.swift */; };
 		7A7841DA1FB4D1C000841C87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841D91FB4D1BA00841C87 /* ViewController.swift */; };
 		7A7841DC1FB4D1C900841C87 /* ViewController+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841DB1FB4D1C900841C87 /* ViewController+ARSCNViewDelegate.swift */; };
 		7A7841DE1FB4D1D400841C87 /* ViewControllerObjectSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841DD1FB4D1D400841C87 /* ViewControllerObjectSelection.swift */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2555A89C1FB510C9009959FE /* score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = score.swift; sourceTree = "<group>"; };
+		2555A8A01FB5112F009959FE /* ScoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreController.swift; sourceTree = "<group>"; };
 		3F74FCA51FB0D16B003050A3 /* AR Paper Toss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AR Paper Toss.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A7841D91FB4D1BA00841C87 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7A7841DB1FB4D1C900841C87 /* ViewController+ARSCNViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+ARSCNViewDelegate.swift"; sourceTree = "<group>"; };
@@ -66,6 +70,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2555A89E1FB510D7009959FE /* models */ = {
+			isa = PBXGroup;
+			children = (
+				2555A89C1FB510C9009959FE /* score.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		2555A89F1FB5111C009959FE /* ModelContorllers */ = {
+			isa = PBXGroup;
+			children = (
+				2555A8A01FB5112F009959FE /* ScoreController.swift */,
+			);
+			path = ModelContorllers;
+			sourceTree = "<group>";
+		};
+		2555A8A21FB511B9009959FE /* Scoring */ = {
+			isa = PBXGroup;
+			children = (
+				2555A89F1FB5111C009959FE /* ModelContorllers */,
+				2555A89E1FB510D7009959FE /* models */,
+			);
+			path = Scoring;
+			sourceTree = "<group>";
+		};
 		3F74FC9C1FB0D16B003050A3 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +114,7 @@
 		3F74FCA71FB0D16B003050A3 /* AR Paper Toss */ = {
 			isa = PBXGroup;
 			children = (
+				2555A8A21FB511B9009959FE /* Scoring */,
 				7A7841D91FB4D1BA00841C87 /* ViewController.swift */,
 				7A7841DB1FB4D1C900841C87 /* ViewController+ARSCNViewDelegate.swift */,
 				7A7841DD1FB4D1D400841C87 /* ViewControllerObjectSelection.swift */,
@@ -236,6 +266,7 @@
 			files = (
 				7A7841DC1FB4D1C900841C87 /* ViewController+ARSCNViewDelegate.swift in Sources */,
 				7A7841DA1FB4D1C000841C87 /* ViewController.swift in Sources */,
+				2555A89D1FB510C9009959FE /* score.swift in Sources */,
 				7A7841F81FB4D48A00841C87 /* VirtualObjectARView.swift in Sources */,
 				7A7841DE1FB4D1D400841C87 /* ViewControllerObjectSelection.swift in Sources */,
 				7A7841E01FB4D1E100841C87 /* ViewControllerActions.swift in Sources */,
@@ -243,6 +274,7 @@
 				7A7841F61FB4D47B00841C87 /* VirtualObjectLoader.swift in Sources */,
 				7A7841FA1FB4D4AC00841C87 /* VirtualObjectInteraction.swift in Sources */,
 				7AA38C3B1FB4DB9700976DEE /* AppDelegate.swift in Sources */,
+				2555A8A11FB5112F009959FE /* ScoreController.swift in Sources */,
 				7A7841EC1FB4D2AA00841C87 /* FocusSquare.swift in Sources */,
 				7A7841FC1FB4D4C500841C87 /* VirtualObjectSelection.swift in Sources */,
 				7A7841E21FB4D1E900841C87 /* ThresholdPanGesture.swift in Sources */,
