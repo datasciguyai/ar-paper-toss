@@ -13,7 +13,7 @@ import ARKit
 class ViewController: UIViewController {
 
     // Actions
-  
+    // Johnny Hicks
     @IBOutlet var sceneView: VirtualObjectARView!
     @IBOutlet weak var addObjectButton: UIButton!
     
