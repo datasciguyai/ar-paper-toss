@@ -1,27 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wHp-ur-bC1">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qy6-aS-pYr">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AmericanTypewriter.ttc">
+            <string>AmericanTypewriter</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Home Screen View Controller-->
         <scene sceneID="bDs-qY-Udl">
             <objects>
-                <viewController storyboardIdentifier="HomeScreen" id="wHp-ur-bC1" customClass="HomeScreenViewController" customModule="PaperTossARDay1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeScreen" id="wHp-ur-bC1" customClass="HomeScreenViewController" customModule="AR_Paper_Toss" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cBp-gM-7Bk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PV3-qT-D4E">
-                                <rect key="frame" x="0.0" y="120" width="375" height="428"/>
+                                <rect key="frame" x="0.0" y="144" width="375" height="515"/>
                             </arscnView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HighScore" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOl-10-hGI">
-                                <rect key="frame" x="122" y="20" width="130" height="30"/>
+                                <rect key="frame" x="122" y="44" width="130" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="H7s-tH-Xmm"/>
                                     <constraint firstAttribute="width" constant="130" id="T6r-tm-7Uc"/>
@@ -33,7 +39,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TossAR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erK-vr-uEr">
-                                <rect key="frame" x="16" y="58" width="343" height="54"/>
+                                <rect key="frame" x="16" y="82" width="343" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="ZFI-Km-Nj6"/>
                                     <constraint firstAttribute="width" constant="343" id="vEj-ca-19b"/>
@@ -43,7 +49,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r76-1M-4cJ">
-                                <rect key="frame" x="16" y="556" width="343" height="53"/>
+                                <rect key="frame" x="16" y="667" width="343" height="53"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="343" id="mEH-mN-VHd"/>
                                     <constraint firstAttribute="height" constant="53" id="uVu-67-XVZ"/>
@@ -55,7 +61,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqp-hY-23z">
-                                <rect key="frame" x="122" y="617" width="130" height="30"/>
+                                <rect key="frame" x="122" y="728" width="130" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Oig-41-KpR"/>
                                     <constraint firstAttribute="width" constant="130" id="xg4-RZ-cCW"/>
@@ -102,5 +108,50 @@
             </objects>
             <point key="canvasLocation" x="1276" y="3.5982008995502253"/>
         </scene>
+        <!--Launch Screen Copy View Controller-->
+        <scene sceneID="A5v-td-ls1">
+            <objects>
+                <viewController id="Qy6-aS-pYr" customClass="LaunchScreenCopyViewController" customModule="AR_Paper_Toss" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="SMf-y9-Fmr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trash Icon" translatesAutoresizingMaskIntoConstraints="NO" id="3Cv-Wk-RYX">
+                                <rect key="frame" x="81" y="262.66666666666669" width="212" height="287.00000000000006"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="212" id="mmY-9Z-cda"/>
+                                    <constraint firstAttribute="height" constant="287" id="pGH-6J-hQT"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paper Toss AR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tD-Es-Jxm">
+                                <rect key="frame" x="38" y="116" width="299" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="299" id="I1B-eF-gmh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="43"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.079976059500000002" green="0.31948548560000001" blue="0.58760559560000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="3Cv-Wk-RYX" firstAttribute="centerX" secondItem="SMf-y9-Fmr" secondAttribute="centerX" id="6WK-jC-Y36"/>
+                            <constraint firstItem="3Cv-Wk-RYX" firstAttribute="centerY" secondItem="SMf-y9-Fmr" secondAttribute="centerY" id="8qM-hi-eWj"/>
+                            <constraint firstItem="2tD-Es-Jxm" firstAttribute="centerX" secondItem="SMf-y9-Fmr" secondAttribute="centerX" id="ckA-cK-5sy"/>
+                            <constraint firstItem="2tD-Es-Jxm" firstAttribute="top" secondItem="Z0Q-Zl-K3u" secondAttribute="top" constant="72" id="iZL-q2-Rgy"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Z0Q-Zl-K3u"/>
+                    </view>
+                    <connections>
+                        <segue destination="wHp-ur-bC1" kind="show" identifier="toMainScreen" id="tzf-9p-pcS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Vzk-8a-gFs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-484" y="-21"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="Trash Icon" width="1118" height="1432"/>
+    </resources>
 </document>

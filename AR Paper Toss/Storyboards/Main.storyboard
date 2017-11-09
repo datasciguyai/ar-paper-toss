@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13174"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,16 +21,16 @@
         <!--View Controller-->
         <scene sceneID="WHd-kE-1yg">
             <objects>
-                <viewController storyboardIdentifier="GameScene" id="hWi-f9-EX3" customClass="ViewController" customModule="PaperTossARDay1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="GameScene" id="hWi-f9-EX3" customClass="ViewController" customModule="AR_Paper_Toss" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="AdH-Nw-Ry2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XTE-Ar-wxZ" customClass="VirtualObjectARView" customModule="PaperTossARDay1" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XTE-Ar-wxZ" customClass="VirtualObjectARView" customModule="AR_Paper_Toss" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
                             </arscnView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GY8-D0-SCK">
-                                <rect key="frame" x="0.0" y="627" width="80" height="40"/>
+                                <rect key="frame" x="0.0" y="738" width="80" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="0Gh-UZ-3gh"/>
                                     <constraint firstAttribute="height" constant="40" id="cX5-qq-ZkW"/>
@@ -77,18 +78,18 @@
         <!--Virtual Object Selection View Controller-->
         <scene sceneID="eEV-NQ-744">
             <objects>
-                <tableViewController id="dD2-sJ-3kf" customClass="VirtualObjectSelectionViewController" customModule="PaperTossARDay1" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="dD2-sJ-3kf" customClass="VirtualObjectSelectionViewController" customModule="AR_Paper_Toss" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" bouncesZoom="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="45" sectionHeaderHeight="28" sectionFooterHeight="28" id="Tv3-VU-zT8">
                         <rect key="frame" x="0.0" y="0.0" width="250" height="250"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ObjectCell" id="diE-k3-jdQ" customClass="ObjectCell" customModule="PaperTossARDay1" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="ObjectCell" id="diE-k3-jdQ" customClass="ObjectCell" customModule="AR_Paper_Toss" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="250" height="45"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="diE-k3-jdQ" id="YOI-ip-Gfa">
-                                    <rect key="frame" x="0.0" y="0.0" width="250" height="44.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="250" height="44.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NCe-e0-nWh">
