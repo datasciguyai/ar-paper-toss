@@ -9,11 +9,9 @@
 import UIKit
 import ARKit
 import SceneKit
-
+/*
 class HomeScreenViewController: UIViewController {
     
-    
-    @IBOutlet weak var homeScreenSceneView: ARSCNView!
     
     
     var screenCenter: CGPoint {
@@ -30,8 +28,8 @@ class HomeScreenViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-//        let configuration = ARWorldTrackingConfiguration()
-//        homeScreenSceneView.session.run(configuration)
+       let configuration = ARWorldTrackingConfiguration()
+       homeScreenSceneView.session.run(configuration)
         
     }
     
@@ -71,3 +69,4 @@ class HomeScreenViewController: UIViewController {
     */
 
 }
+*/

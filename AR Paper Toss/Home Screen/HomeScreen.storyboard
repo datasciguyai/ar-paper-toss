@@ -23,82 +23,69 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PV3-qT-D4E">
-                                <rect key="frame" x="0.0" y="144" width="375" height="515"/>
-                            </arscnView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HighScore" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOl-10-hGI">
-                                <rect key="frame" x="122" y="44" width="130" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="H7s-tH-Xmm"/>
-                                    <constraint firstAttribute="width" constant="130" id="T6r-tm-7Uc"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="Uzi-J0-g60"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="30" id="mtd-Xd-RSA"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HighScore: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOl-10-hGI">
+                                <rect key="frame" x="113" y="176" width="148" height="28"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TossAR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erK-vr-uEr">
-                                <rect key="frame" x="16" y="82" width="343" height="54"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="54" id="ZFI-Km-Nj6"/>
-                                    <constraint firstAttribute="width" constant="343" id="vEj-ca-19b"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paper Toss AR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erK-vr-uEr">
+                                <rect key="frame" x="20" y="114.00000000000001" width="335" height="49.666666666666671"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="43"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r76-1M-4cJ">
-                                <rect key="frame" x="16" y="667" width="343" height="53"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqp-hY-23z">
+                                <rect key="frame" x="30" y="633" width="315" height="112"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="343" id="mEH-mN-VHd"/>
-                                    <constraint firstAttribute="height" constant="53" id="uVu-67-XVZ"/>
+                                    <constraint firstAttribute="height" constant="112" id="LUU-ez-Aek"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="34"/>
-                                <state key="normal" title="New Game!"/>
+                                <state key="normal" image="Reset High Score"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Paper Ball" translatesAutoresizingMaskIntoConstraints="NO" id="CjC-sB-CKm">
+                                <rect key="frame" x="47" y="228" width="280" height="268"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="280" id="7LI-lu-Fts"/>
+                                    <constraint firstAttribute="height" constant="268" id="PKu-Kj-kpl"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r76-1M-4cJ">
+                                <rect key="frame" x="30" y="520" width="315" height="105"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="105" id="Soq-bB-Vvv"/>
+                                </constraints>
+                                <state key="normal" image="Button"/>
                                 <connections>
                                     <segue destination="nAt-i1-Joh" kind="show" animates="NO" id="9GI-7N-n7D"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqp-hY-23z">
-                                <rect key="frame" x="122" y="728" width="130" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Oig-41-KpR"/>
-                                    <constraint firstAttribute="width" constant="130" id="xg4-RZ-cCW"/>
-                                </constraints>
-                                <state key="normal" title="Clear HighScore"/>
-                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.07997605949640274" green="0.31948548555374146" blue="0.58760559558868408" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="bqp-hY-23z" firstAttribute="top" secondItem="r76-1M-4cJ" secondAttribute="bottom" constant="8" id="1sb-yg-b6d"/>
-                            <constraint firstItem="erK-vr-uEr" firstAttribute="centerX" secondItem="cBp-gM-7Bk" secondAttribute="centerX" id="4vf-eC-Ms3"/>
-                            <constraint firstItem="VbX-MY-IRM" firstAttribute="trailing" secondItem="erK-vr-uEr" secondAttribute="trailing" constant="16" id="6cK-jm-dhY"/>
-                            <constraint firstItem="erK-vr-uEr" firstAttribute="top" secondItem="oOl-10-hGI" secondAttribute="bottom" constant="8" id="7JA-Ll-77c"/>
-                            <constraint firstItem="PV3-qT-D4E" firstAttribute="trailing" secondItem="VbX-MY-IRM" secondAttribute="trailing" id="FXv-GA-mj2"/>
-                            <constraint firstItem="VbX-MY-IRM" firstAttribute="bottom" secondItem="bqp-hY-23z" secondAttribute="bottom" constant="20" id="LJp-66-CBD"/>
-                            <constraint firstItem="PV3-qT-D4E" firstAttribute="top" secondItem="erK-vr-uEr" secondAttribute="bottom" constant="8" id="OJX-Mj-JdH"/>
-                            <constraint firstItem="oOl-10-hGI" firstAttribute="top" secondItem="VbX-MY-IRM" secondAttribute="top" id="Os9-eO-eg2"/>
-                            <constraint firstItem="erK-vr-uEr" firstAttribute="leading" secondItem="VbX-MY-IRM" secondAttribute="leading" constant="16" id="QZc-HZ-6ZC"/>
-                            <constraint firstItem="bqp-hY-23z" firstAttribute="top" secondItem="r76-1M-4cJ" secondAttribute="bottom" constant="8" id="UhQ-d4-9ql"/>
-                            <constraint firstItem="r76-1M-4cJ" firstAttribute="top" secondItem="PV3-qT-D4E" secondAttribute="bottom" constant="8" id="ejv-xg-B8b"/>
-                            <constraint firstItem="bqp-hY-23z" firstAttribute="centerX" secondItem="cBp-gM-7Bk" secondAttribute="centerX" id="gs6-wN-W0D"/>
-                            <constraint firstItem="oOl-10-hGI" firstAttribute="centerX" secondItem="cBp-gM-7Bk" secondAttribute="centerX" id="jS3-q9-0H6"/>
-                            <constraint firstItem="r76-1M-4cJ" firstAttribute="leading" secondItem="VbX-MY-IRM" secondAttribute="leading" constant="16" id="nJC-Fp-FAy"/>
-                            <constraint firstItem="VbX-MY-IRM" firstAttribute="trailing" secondItem="r76-1M-4cJ" secondAttribute="trailing" constant="16" id="nqe-qp-GLG"/>
-                            <constraint firstItem="PV3-qT-D4E" firstAttribute="leading" secondItem="VbX-MY-IRM" secondAttribute="leading" id="tHw-Kh-5Sx"/>
-                            <constraint firstItem="erK-vr-uEr" firstAttribute="top" secondItem="oOl-10-hGI" secondAttribute="bottom" constant="8" id="xdE-Uc-vTH"/>
+                            <constraint firstItem="r76-1M-4cJ" firstAttribute="leading" secondItem="VbX-MY-IRM" secondAttribute="leading" constant="30" id="6FB-YR-KUA"/>
+                            <constraint firstItem="r76-1M-4cJ" firstAttribute="top" secondItem="CjC-sB-CKm" secondAttribute="bottom" constant="24" id="8Sz-tK-VXj"/>
+                            <constraint firstItem="VbX-MY-IRM" firstAttribute="trailing" secondItem="bqp-hY-23z" secondAttribute="trailing" constant="30" id="GGQ-Dl-vgD"/>
+                            <constraint firstItem="bqp-hY-23z" firstAttribute="centerX" secondItem="cBp-gM-7Bk" secondAttribute="centerX" id="GUw-7z-dHL"/>
+                            <constraint firstItem="VbX-MY-IRM" firstAttribute="trailing" secondItem="erK-vr-uEr" secondAttribute="trailing" constant="20" id="Gnx-Ul-AcH"/>
+                            <constraint firstItem="bqp-hY-23z" firstAttribute="top" secondItem="r76-1M-4cJ" secondAttribute="bottom" constant="8" id="J37-KL-pS0"/>
+                            <constraint firstItem="erK-vr-uEr" firstAttribute="centerX" secondItem="cBp-gM-7Bk" secondAttribute="centerX" id="JWZ-zn-My4"/>
+                            <constraint firstItem="oOl-10-hGI" firstAttribute="centerX" secondItem="cBp-gM-7Bk" secondAttribute="centerX" id="Odk-qT-koc"/>
+                            <constraint firstItem="VbX-MY-IRM" firstAttribute="trailing" secondItem="r76-1M-4cJ" secondAttribute="trailing" constant="30" id="bME-B5-r8P"/>
+                            <constraint firstItem="CjC-sB-CKm" firstAttribute="top" secondItem="oOl-10-hGI" secondAttribute="bottom" constant="24" id="ggC-dp-DKM"/>
+                            <constraint firstItem="bqp-hY-23z" firstAttribute="leading" secondItem="VbX-MY-IRM" secondAttribute="leading" constant="30" id="lQ2-FM-KAb"/>
+                            <constraint firstItem="erK-vr-uEr" firstAttribute="leading" secondItem="VbX-MY-IRM" secondAttribute="leading" constant="20" id="nyY-U1-7PI"/>
+                            <constraint firstItem="CjC-sB-CKm" firstAttribute="centerX" secondItem="cBp-gM-7Bk" secondAttribute="centerX" id="p0x-cT-Hhb"/>
+                            <constraint firstItem="erK-vr-uEr" firstAttribute="top" secondItem="VbX-MY-IRM" secondAttribute="top" constant="70" id="rSu-5X-wLv"/>
+                            <constraint firstItem="oOl-10-hGI" firstAttribute="top" secondItem="erK-vr-uEr" secondAttribute="bottom" constant="12.333333333333314" id="vDO-Vm-kH7"/>
+                            <constraint firstItem="r76-1M-4cJ" firstAttribute="centerX" secondItem="cBp-gM-7Bk" secondAttribute="centerX" id="zHW-D0-KZE"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VbX-MY-IRM"/>
                     </view>
                     <navigationItem key="navigationItem" id="zee-sf-wSG"/>
-                    <connections>
-                        <outlet property="homeScreenSceneView" destination="PV3-qT-D4E" id="aW7-oE-ZN6"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EbM-lq-epm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="408.80000000000001" y="-21.139430284857571"/>
+            <point key="canvasLocation" x="408.80000000000001" y="-21.428571428571431"/>
         </scene>
         <!--GameScene-->
         <scene sceneID="8RX-JX-RLF">
@@ -152,6 +139,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Button" width="999" height="351"/>
+        <image name="Paper Ball" width="671" height="666"/>
+        <image name="Reset High Score" width="999" height="351"/>
         <image name="Trash Icon" width="1118" height="1432"/>
     </resources>
 </document>
