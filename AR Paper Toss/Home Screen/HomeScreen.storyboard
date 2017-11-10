@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -51,26 +50,23 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HighScore: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOl-10-hGI">
-                                <rect key="frame" x="0.0" y="101" width="375" height="63"/>
+                                <rect key="frame" x="0.0" y="100.99999999999999" width="375" height="58.333333333333329"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Paper Ball" translatesAutoresizingMaskIntoConstraints="NO" id="CjC-sB-CKm">
-                                <rect key="frame" x="47" y="199" width="281" height="281"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="CjC-sB-CKm" secondAttribute="height" multiplier="1:1" id="QYf-1E-j5b"/>
-                                </constraints>
+                                <rect key="frame" x="47" y="189.33333333333334" width="281" height="270.66666666666663"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.07997605949640274" green="0.31948548555374146" blue="0.58760559558868408" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="r76-1M-4cJ" firstAttribute="height" secondItem="cBp-gM-7Bk" secondAttribute="height" multiplier="1/6" id="0hb-Uz-XWs"/>
                             <constraint firstItem="bqp-hY-23z" firstAttribute="width" secondItem="cBp-gM-7Bk" secondAttribute="width" multiplier="7/8" id="4Ub-Zc-CWx"/>
-                            <constraint firstItem="CjC-sB-CKm" firstAttribute="top" secondItem="oOl-10-hGI" secondAttribute="bottom" constant="35" id="4Un-XS-Rdc"/>
+                            <constraint firstItem="CjC-sB-CKm" firstAttribute="top" secondItem="oOl-10-hGI" secondAttribute="bottom" constant="30" id="4Un-XS-Rdc"/>
                             <constraint firstItem="bqp-hY-23z" firstAttribute="centerX" secondItem="cBp-gM-7Bk" secondAttribute="centerX" id="B6l-cc-MxK"/>
                             <constraint firstItem="bqp-hY-23z" firstAttribute="top" secondItem="r76-1M-4cJ" secondAttribute="bottom" constant="8.6666666666666288" id="DD0-eE-0iO"/>
-                            <constraint firstItem="r76-1M-4cJ" firstAttribute="top" secondItem="CjC-sB-CKm" secondAttribute="bottom" constant="9.8300000000000001" id="GuQ-v4-2SZ"/>
+                            <constraint firstItem="r76-1M-4cJ" firstAttribute="top" secondItem="CjC-sB-CKm" secondAttribute="bottom" constant="30" id="GuQ-v4-2SZ"/>
                             <constraint firstItem="erK-vr-uEr" firstAttribute="top" secondItem="VbX-MY-IRM" secondAttribute="top" id="IRX-Sv-Ebn"/>
                             <constraint firstItem="VbX-MY-IRM" firstAttribute="bottom" secondItem="bqp-hY-23z" secondAttribute="bottom" constant="8" id="JQj-9o-Jqn"/>
                             <constraint firstItem="CjC-sB-CKm" firstAttribute="width" secondItem="cBp-gM-7Bk" secondAttribute="width" multiplier="3/4" id="Li9-z5-Mss"/>
@@ -83,6 +79,7 @@
                             <constraint firstItem="oOl-10-hGI" firstAttribute="top" secondItem="erK-vr-uEr" secondAttribute="bottom" constant="7" id="p6K-LR-HjP"/>
                             <constraint firstItem="oOl-10-hGI" firstAttribute="centerX" secondItem="VbX-MY-IRM" secondAttribute="centerX" id="qXo-bB-A1G"/>
                             <constraint firstItem="CjC-sB-CKm" firstAttribute="centerX" secondItem="VbX-MY-IRM" secondAttribute="centerX" id="rct-IY-GLN"/>
+                            <constraint firstItem="CjC-sB-CKm" firstAttribute="height" secondItem="cBp-gM-7Bk" secondAttribute="height" multiplier="1/3" id="zLW-i6-nJI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VbX-MY-IRM"/>
                     </view>
