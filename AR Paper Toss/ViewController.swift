@@ -13,7 +13,6 @@ import ARKit
 class ViewController: UIViewController {
 
     // Actions
-  
     @IBOutlet var sceneView: VirtualObjectARView!
     @IBOutlet weak var addObjectButton: UIButton!
     
@@ -37,6 +36,9 @@ class ViewController: UIViewController {
         sceneView.delegate = self
         setupCamera()
         sceneView.scene.rootNode.addChildNode(focusSquare)
+        
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGestureRecognizer(sender:)))
+        sceneView.addGestureRecognizer(panGestureRecognizer)
         
     }
     
@@ -151,4 +153,8 @@ class ViewController: UIViewController {
         }
     }
 
+}
+
+func +(lhs: SCNVector3, rhs: SCNVector3) -> SCNVector3 {
+    return SCNVector3Make(lhs.x + rhs.x, lhs.y + rhs.y, lhs.z + lhs.z)
 }
