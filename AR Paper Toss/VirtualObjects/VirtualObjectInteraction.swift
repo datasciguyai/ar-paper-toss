@@ -114,24 +114,24 @@ class VirtualObjectInteraction: NSObject, UIGestureRecognizerDelegate {
     
     @objc func didPinch(_ gesture: UIPinchGestureRecognizer) {
         
-//        guard gesture.state == .changed || gesture.state == .ended else { return }
-//
-//        let touchLocation = gesture.location(in: sceneView)
-//        if let pinchedObject = sceneView.virtualObject(at: touchLocation)
-//        {
-//            selectedObject = pinchedObject
-//        }
-//
-//        if let object = selectedObject
-//        {
-//            let newScale = Float(gesture.scale) * object.initialScale
-//            object.scale = SCNVector3(newScale, newScale, newScale)
-//
-//            if (gesture.state == .ended)
-//            {
-//                object.initialScale = newScale
-//            }
-//        }
+        guard gesture.state == .changed || gesture.state == .ended else { return }
+
+        let touchLocation = gesture.location(in: sceneView)
+        if let pinchedObject = sceneView.virtualObject(at: touchLocation)
+        {
+            selectedObject = pinchedObject
+        }
+
+        if let object = selectedObject
+        {
+            let newScale = Float(gesture.scale) * object.initialScale
+            object.scale = SCNVector3(newScale, newScale, newScale)
+
+            if (gesture.state == .ended)
+            {
+                object.initialScale = newScale
+            }
+        }
     
     }
 
