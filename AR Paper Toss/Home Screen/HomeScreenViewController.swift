@@ -9,11 +9,22 @@
 import UIKit
 import ARKit
 import SceneKit
-/*
+
 class HomeScreenViewController: UIViewController {
     
+    @IBOutlet weak var playNowButton: UIButton!
     
+    @IBOutlet weak var resetHighScoreButton: UIButton!
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        playNowButton.layer.cornerRadius = 20
+        resetHighScoreButton.layer.cornerRadius = 20
+        
+    }
+    
+    /*
     var screenCenter: CGPoint {
         let bounds = homeScreenSceneView.bounds
         return CGPoint(x: bounds.midX, y: bounds.midY)
@@ -56,17 +67,7 @@ class HomeScreenViewController: UIViewController {
         camera.minimumExposure = -1
         camera.maximumExposure = 3
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-}
 */
+}
+

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qy6-aS-pYr">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -22,34 +22,42 @@
             <objects>
                 <viewController storyboardIdentifier="HomeScreen" id="wHp-ur-bC1" customClass="HomeScreenViewController" customModule="AR_Paper_Toss" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cBp-gM-7Bk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Paper Toss AR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erK-vr-uEr">
-                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="50"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="43"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r76-1M-4cJ">
-                                <rect key="frame" x="23.5" y="427" width="328" height="111.5"/>
-                                <state key="normal" image="Button"/>
+                                <rect key="frame" x="23.333333333333343" y="489.99999999999994" width="328.33333333333326" height="135.33333333333331"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="35"/>
+                                <state key="normal" title="Play Now">
+                                    <color key="titleColor" red="0.1525610983" green="0.31394040579999999" blue="0.56867575650000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <segue destination="nAt-i1-Joh" kind="show" animates="NO" id="9GI-7N-n7D"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqp-hY-23z">
-                                <rect key="frame" x="23.5" y="548" width="328" height="111"/>
-                                <state key="normal" image="Reset High Score"/>
+                                <rect key="frame" x="23.333333333333343" y="634.66666666666663" width="328.33333333333326" height="135.33333333333337"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="35"/>
+                                <state key="normal" title="Reset High Score">
+                                    <color key="titleColor" red="0.1525610983" green="0.31394040579999999" blue="0.56867575650000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HighScore: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOl-10-hGI">
-                                <rect key="frame" x="0.0" y="77" width="375" height="24"/>
+                                <rect key="frame" x="0.0" y="101" width="375" height="63"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Paper Ball" translatesAutoresizingMaskIntoConstraints="NO" id="CjC-sB-CKm">
-                                <rect key="frame" x="47" y="136" width="281" height="281"/>
+                                <rect key="frame" x="47" y="199" width="281" height="281"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="CjC-sB-CKm" secondAttribute="height" multiplier="1:1" id="QYf-1E-j5b"/>
                                 </constraints>
@@ -79,6 +87,10 @@
                         <viewLayoutGuide key="safeArea" id="VbX-MY-IRM"/>
                     </view>
                     <navigationItem key="navigationItem" id="zee-sf-wSG"/>
+                    <connections>
+                        <outlet property="playNowButton" destination="r76-1M-4cJ" id="6Xr-Vi-6wD"/>
+                        <outlet property="resetHighScoreButton" destination="bqp-hY-23z" id="GNl-25-hoN"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EbM-lq-epm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -97,18 +109,18 @@
             <objects>
                 <viewController id="Qy6-aS-pYr" customClass="LaunchScreenCopyViewController" customModule="AR_Paper_Toss" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SMf-y9-Fmr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trash Icon" translatesAutoresizingMaskIntoConstraints="NO" id="3Cv-Wk-RYX">
-                                <rect key="frame" x="81.5" y="190" width="212" height="287"/>
+                                <rect key="frame" x="81.666666666666686" y="262.66666666666669" width="212" height="287.00000000000006"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="212" id="mmY-9Z-cda"/>
                                     <constraint firstAttribute="height" constant="287" id="pGH-6J-hQT"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paper Toss AR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tD-Es-Jxm">
-                                <rect key="frame" x="0.0" y="20" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="50"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="43"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -134,9 +146,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Button" width="999" height="351"/>
         <image name="Paper Ball" width="671" height="666"/>
-        <image name="Reset High Score" width="999" height="351"/>
         <image name="Trash Icon" width="1118" height="1432"/>
     </resources>
 </document>
