@@ -66,7 +66,11 @@ class ViewController: UIViewController {
             let location = SCNVector3(transform.m41, transform.m42 - 0.2, transform.m43)
             //            let position = orientation + location
             ballNode.position = location
-            let velocity = abs(sender.velocity(in: arScene).y / CGFloat(300))
+<<<<<<< HEAD
+            let velocity = abs(sender.velocity(in: arScene).y / CGFloat(200))
+=======
+            let velocity = abs(sender.velocity(in: arScene).y / CGFloat(10))
+>>>>>>> develop
             ballNode.physicsBody?.applyForce(SCNVector3(orientation.x * Float(velocity), orientation.y * Float(velocity), orientation.z * Float(velocity)), asImpulse: true)
             arScene.scene.rootNode.addChildNode(ballNode)
         default:

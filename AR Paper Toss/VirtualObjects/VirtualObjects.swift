@@ -105,7 +105,7 @@ extension VirtualObject {
     
     /// Loads all the model objects in `Models.scnassets`.
     static let availableObjects: [VirtualObject] = {
-        let modelsURL = Bundle.main.url(forResource: "Models.scnassets", withExtension: nil)!
+        let modelsURL = Bundle.main.url(forResource: "Models.scnassets/Trash Bin", withExtension: nil)!
         
         let fileEnumerator = FileManager().enumerator(at: modelsURL, includingPropertiesForKeys: [])!
         
