@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,61 +24,55 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HighScore: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOl-10-hGI">
-                                <rect key="frame" x="113" y="176" width="148" height="28"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paper Toss AR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erK-vr-uEr">
-                                <rect key="frame" x="20" y="114.00000000000001" width="335" height="49.666666666666671"/>
-                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="43"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqp-hY-23z">
-                                <rect key="frame" x="30" y="633" width="315" height="112"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="112" id="LUU-ez-Aek"/>
-                                </constraints>
-                                <state key="normal" image="Reset High Score"/>
-                            </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Paper Ball" translatesAutoresizingMaskIntoConstraints="NO" id="CjC-sB-CKm">
-                                <rect key="frame" x="47" y="228" width="280" height="268"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="7LI-lu-Fts"/>
-                                    <constraint firstAttribute="height" constant="268" id="PKu-Kj-kpl"/>
-                                </constraints>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ipi-WP-pxd">
+                                <rect key="frame" x="23.333333333333343" y="94" width="328.33333333333326" height="82.666666666666686"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paper Toss AR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erK-vr-uEr">
+                                        <rect key="frame" x="15" y="0.0" width="298.33333333333331" height="49.666666666666664"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="43"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HighScore: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOl-10-hGI">
+                                        <rect key="frame" x="90.666666666666671" y="54.666666666666657" width="147.33333333333331" height="28"/>
+                                        <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Paper Ball" translatesAutoresizingMaskIntoConstraints="NO" id="CjC-sB-CKm">
+                                <rect key="frame" x="53" y="228" width="268" height="268"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r76-1M-4cJ">
-                                <rect key="frame" x="30" y="520" width="315" height="105"/>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillEqually" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="NOY-in-fKs">
+                                <rect key="frame" x="30" y="532" width="315" height="250"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r76-1M-4cJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="118"/>
+                                        <state key="normal" image="Button"/>
+                                        <connections>
+                                            <segue destination="nAt-i1-Joh" kind="show" animates="NO" id="9GI-7N-n7D"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqp-hY-23z">
+                                        <rect key="frame" x="0.0" y="132" width="315" height="118"/>
+                                        <state key="normal" image="Reset High Score"/>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="105" id="Soq-bB-Vvv"/>
+                                    <constraint firstAttribute="height" constant="250" id="K8D-rc-gCX"/>
                                 </constraints>
-                                <state key="normal" image="Button"/>
-                                <connections>
-                                    <segue destination="nAt-i1-Joh" kind="show" animates="NO" id="9GI-7N-n7D"/>
-                                </connections>
-                            </button>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.07997605949640274" green="0.31948548555374146" blue="0.58760559558868408" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="r76-1M-4cJ" firstAttribute="leading" secondItem="VbX-MY-IRM" secondAttribute="leading" constant="30" id="6FB-YR-KUA"/>
-                            <constraint firstItem="r76-1M-4cJ" firstAttribute="top" secondItem="CjC-sB-CKm" secondAttribute="bottom" constant="24" id="8Sz-tK-VXj"/>
-                            <constraint firstItem="VbX-MY-IRM" firstAttribute="trailing" secondItem="bqp-hY-23z" secondAttribute="trailing" constant="30" id="GGQ-Dl-vgD"/>
-                            <constraint firstItem="bqp-hY-23z" firstAttribute="centerX" secondItem="cBp-gM-7Bk" secondAttribute="centerX" id="GUw-7z-dHL"/>
-                            <constraint firstItem="VbX-MY-IRM" firstAttribute="trailing" secondItem="erK-vr-uEr" secondAttribute="trailing" constant="20" id="Gnx-Ul-AcH"/>
-                            <constraint firstItem="bqp-hY-23z" firstAttribute="top" secondItem="r76-1M-4cJ" secondAttribute="bottom" constant="8" id="J37-KL-pS0"/>
-                            <constraint firstItem="erK-vr-uEr" firstAttribute="centerX" secondItem="cBp-gM-7Bk" secondAttribute="centerX" id="JWZ-zn-My4"/>
-                            <constraint firstItem="oOl-10-hGI" firstAttribute="centerX" secondItem="cBp-gM-7Bk" secondAttribute="centerX" id="Odk-qT-koc"/>
-                            <constraint firstItem="VbX-MY-IRM" firstAttribute="trailing" secondItem="r76-1M-4cJ" secondAttribute="trailing" constant="30" id="bME-B5-r8P"/>
-                            <constraint firstItem="CjC-sB-CKm" firstAttribute="top" secondItem="oOl-10-hGI" secondAttribute="bottom" constant="24" id="ggC-dp-DKM"/>
-                            <constraint firstItem="bqp-hY-23z" firstAttribute="leading" secondItem="VbX-MY-IRM" secondAttribute="leading" constant="30" id="lQ2-FM-KAb"/>
-                            <constraint firstItem="erK-vr-uEr" firstAttribute="leading" secondItem="VbX-MY-IRM" secondAttribute="leading" constant="20" id="nyY-U1-7PI"/>
-                            <constraint firstItem="CjC-sB-CKm" firstAttribute="centerX" secondItem="cBp-gM-7Bk" secondAttribute="centerX" id="p0x-cT-Hhb"/>
-                            <constraint firstItem="erK-vr-uEr" firstAttribute="top" secondItem="VbX-MY-IRM" secondAttribute="top" constant="70" id="rSu-5X-wLv"/>
-                            <constraint firstItem="oOl-10-hGI" firstAttribute="top" secondItem="erK-vr-uEr" secondAttribute="bottom" constant="12.333333333333314" id="vDO-Vm-kH7"/>
-                            <constraint firstItem="r76-1M-4cJ" firstAttribute="centerX" secondItem="cBp-gM-7Bk" secondAttribute="centerX" id="zHW-D0-KZE"/>
+                            <constraint firstAttribute="trailing" secondItem="NOY-in-fKs" secondAttribute="trailing" constant="30" id="123-t2-x8x"/>
+                            <constraint firstItem="ipi-WP-pxd" firstAttribute="width" secondItem="cBp-gM-7Bk" secondAttribute="width" multiplier="7/8" id="3Dq-EW-lsm"/>
+                            <constraint firstItem="NOY-in-fKs" firstAttribute="leading" secondItem="VbX-MY-IRM" secondAttribute="leading" constant="30" id="NcE-4s-IhT"/>
+                            <constraint firstItem="ipi-WP-pxd" firstAttribute="centerX" secondItem="cBp-gM-7Bk" secondAttribute="centerX" id="SBF-m9-eAH"/>
+                            <constraint firstAttribute="bottom" secondItem="NOY-in-fKs" secondAttribute="bottom" constant="30" id="e1u-uc-cvp"/>
+                            <constraint firstItem="ipi-WP-pxd" firstAttribute="top" secondItem="VbX-MY-IRM" secondAttribute="top" constant="50" id="wm9-TC-mIL"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VbX-MY-IRM"/>
                     </view>
@@ -110,11 +105,8 @@
                                     <constraint firstAttribute="height" constant="287" id="pGH-6J-hQT"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paper Toss AR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tD-Es-Jxm">
-                                <rect key="frame" x="38" y="116" width="299" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="299" id="I1B-eF-gmh"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paper Toss AR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tD-Es-Jxm">
+                                <rect key="frame" x="0.0" y="94" width="375" height="50"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="43"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -124,8 +116,9 @@
                         <constraints>
                             <constraint firstItem="3Cv-Wk-RYX" firstAttribute="centerX" secondItem="SMf-y9-Fmr" secondAttribute="centerX" id="6WK-jC-Y36"/>
                             <constraint firstItem="3Cv-Wk-RYX" firstAttribute="centerY" secondItem="SMf-y9-Fmr" secondAttribute="centerY" id="8qM-hi-eWj"/>
+                            <constraint firstItem="2tD-Es-Jxm" firstAttribute="width" secondItem="SMf-y9-Fmr" secondAttribute="width" id="DjP-0r-x1y"/>
                             <constraint firstItem="2tD-Es-Jxm" firstAttribute="centerX" secondItem="SMf-y9-Fmr" secondAttribute="centerX" id="ckA-cK-5sy"/>
-                            <constraint firstItem="2tD-Es-Jxm" firstAttribute="top" secondItem="Z0Q-Zl-K3u" secondAttribute="top" constant="72" id="iZL-q2-Rgy"/>
+                            <constraint firstItem="2tD-Es-Jxm" firstAttribute="top" secondItem="Z0Q-Zl-K3u" secondAttribute="top" constant="50" id="iZL-q2-Rgy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Z0Q-Zl-K3u"/>
                     </view>
