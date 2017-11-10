@@ -55,6 +55,23 @@ class ViewController: UIViewController {
         session.pause()
     }
     
+    @objc func handlePanGestureRecognizer(sender: UIPanGestureRecognizer) {
+        switch sender.state {
+        case .ended:
+            guard let arScene = sender.view as? ARSCNView, let pointOfView = arScene.pointOfView, let paperScene = SCNScene(named: "Models.scnassets/Paper Ball/Paper-Ball.scn"), let ballNode = paperScene.rootNode.childNode(withName: "paperBall", recursively: false) else { return }
+            let transform = pointOfView.transform
+            let orientation = SCNVector3(-transform.m31, -transform.m32, -transform.m33)
+            let location = SCNVector3(transform.m41, transform.m42 - 0.2, transform.m43)
+            //            let position = orientation + location
+            ballNode.position = location
+            let velocity = abs(sender.velocity(in: arScene).y / CGFloat(200))
+            ballNode.physicsBody?.applyForce(SCNVector3(orientation.x * Float(velocity), orientation.y * Float(velocity), orientation.z * Float(velocity)), asImpulse: true)
+            arScene.scene.rootNode.addChildNode(ballNode)
+        default:
+            break
+        }
+    }
+    
     func centerPivot(for node: SCNNode) {
         let min = node.boundingBox.min
         let max = node.boundingBox.max
@@ -80,9 +97,12 @@ class ViewController: UIViewController {
     
     func startupBin() {
         
-        
         // Add Code to create initial bin in viewDidLoad
 
+        let startupBin = SCNScene(named: "Models.scnassets/Classic-Bin.scn")
+        let startupBinNode = startupBin?.rootNode.childNode(withName: "Classic-Bin", recursively: false)
+        startupBinNode?.position = SCNVector3(0,0,-3)
+        self.sceneView.scene.rootNode.addChildNode(startupBinNode!)
         
     }
     
