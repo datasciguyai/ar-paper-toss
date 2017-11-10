@@ -13,7 +13,6 @@ import ARKit
 class ViewController: UIViewController {
 
     // Actions
-  
     @IBOutlet var sceneView: VirtualObjectARView!
     @IBOutlet weak var addObjectButton: UIButton!
     
@@ -38,6 +37,9 @@ class ViewController: UIViewController {
         setupCamera()
         sceneView.scene.rootNode.addChildNode(focusSquare)
         
+        let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGestureRecognizer(sender:)))
+        sceneView.addGestureRecognizer(panGestureRecognizer)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -53,6 +55,23 @@ class ViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         session.pause()
+    }
+    
+    @objc func handlePanGestureRecognizer(sender: UIPanGestureRecognizer) {
+        switch sender.state {
+        case .ended:
+            guard let arScene = sender.view as? ARSCNView, let pointOfView = arScene.pointOfView, let paperScene = SCNScene(named: "Models.scnassets/Paper Ball/Paper-Ball.scn"), let ballNode = paperScene.rootNode.childNode(withName: "paperBall", recursively: false) else { return }
+            let transform = pointOfView.transform
+            let orientation = SCNVector3(-transform.m31, -transform.m32, -transform.m33)
+            let location = SCNVector3(transform.m41, transform.m42 - 0.2, transform.m43)
+            //            let position = orientation + location
+            ballNode.position = location
+            let velocity = abs(sender.velocity(in: arScene).y / CGFloat(10))
+            ballNode.physicsBody?.applyForce(SCNVector3(orientation.x * Float(velocity), orientation.y * Float(velocity), orientation.z * Float(velocity)), asImpulse: true)
+            arScene.scene.rootNode.addChildNode(ballNode)
+        default:
+            break
+        }
     }
     
     func centerPivot(for node: SCNNode) {
@@ -131,4 +150,8 @@ class ViewController: UIViewController {
         }
     }
 
+}
+
+func +(lhs: SCNVector3, rhs: SCNVector3) -> SCNVector3 {
+    return SCNVector3Make(lhs.x + rhs.x, lhs.y + rhs.y, lhs.z + lhs.z)
 }
