@@ -30,11 +30,8 @@
                                     <constraint firstAttribute="height" constant="287" id="w5b-L7-hOx"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paper Toss AR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icQ-s5-Rmv">
-                                <rect key="frame" x="38" y="116" width="299" height="50"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="299" id="ez5-ul-Ebh"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paper Toss AR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icQ-s5-Rmv">
+                                <rect key="frame" x="0.0" y="44" width="375" height="50"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="43"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -42,7 +39,8 @@
                         </subviews>
                         <color key="backgroundColor" red="0.07997605949640274" green="0.31948548555374146" blue="0.58760559558868408" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="icQ-s5-Rmv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="72" id="3mN-jB-oBy"/>
+                            <constraint firstItem="icQ-s5-Rmv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3mN-jB-oBy"/>
+                            <constraint firstItem="icQ-s5-Rmv" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="ZA4-b4-X6T"/>
                             <constraint firstItem="icQ-s5-Rmv" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="e9v-77-Qe9"/>
                             <constraint firstItem="VWd-os-6yh" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="fNb-s9-FOR"/>
                             <constraint firstItem="VWd-os-6yh" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="jSi-Jz-4Ya"/>
