@@ -16,6 +16,12 @@ class HomeScreenViewController: UIViewController {
     
     @IBOutlet weak var resetHighScoreButton: UIButton!
     
+    @IBOutlet weak var highScoreLabel: UILabel!
+    
+    func setHighScore() {
+        highScoreLabel.text = ScoreController.shared.highScoreString
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,6 +29,8 @@ class HomeScreenViewController: UIViewController {
         resetHighScoreButton.layer.cornerRadius = 20
         
     }
+    
+    
     
     /*
     var screenCenter: CGPoint {

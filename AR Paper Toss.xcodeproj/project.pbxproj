@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2555A89D1FB510C9009959FE /* score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2555A89C1FB510C9009959FE /* score.swift */; };
 		2555A8A11FB5112F009959FE /* ScoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2555A8A01FB5112F009959FE /* ScoreController.swift */; };
 		2555A8A51FB51D14009959FE /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2555A8A41FB51D14009959FE /* Contact.swift */; };
 		38D3E3D61FB51A34001E7121 /* LaunchScreenCopyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3E3D51FB51A34001E7121 /* LaunchScreenCopyViewController.swift */; };
@@ -35,7 +34,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2555A89C1FB510C9009959FE /* score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = score.swift; sourceTree = "<group>"; };
 		2555A8A01FB5112F009959FE /* ScoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreController.swift; sourceTree = "<group>"; };
 		2555A8A41FB51D14009959FE /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		38D3E3D51FB51A34001E7121 /* LaunchScreenCopyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenCopyViewController.swift; sourceTree = "<group>"; };
@@ -74,28 +72,10 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2555A89E1FB510D7009959FE /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				2555A89C1FB510C9009959FE /* score.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		2555A89F1FB5111C009959FE /* ModelContorllers */ = {
-			isa = PBXGroup;
-			children = (
-				2555A8A01FB5112F009959FE /* ScoreController.swift */,
-			);
-			path = ModelContorllers;
-			sourceTree = "<group>";
-		};
 		2555A8A21FB511B9009959FE /* Kaden's folders */ = {
 			isa = PBXGroup;
 			children = (
 				2555A8A31FB51CB7009959FE /* Contact */,
-				2555A89F1FB5111C009959FE /* ModelContorllers */,
-				2555A89E1FB510D7009959FE /* Models */,
 			);
 			path = "Kaden's folders";
 			sourceTree = "<group>";
@@ -104,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				2555A8A41FB51D14009959FE /* Contact.swift */,
+				2555A8A01FB5112F009959FE /* ScoreController.swift */,
 			);
 			path = Contact;
 			sourceTree = "<group>";
@@ -281,7 +262,6 @@
 				2555A8A51FB51D14009959FE /* Contact.swift in Sources */,
 				7A7841DC1FB4D1C900841C87 /* ViewController+ARSCNViewDelegate.swift in Sources */,
 				7A7841DA1FB4D1C000841C87 /* ViewController.swift in Sources */,
-				2555A89D1FB510C9009959FE /* score.swift in Sources */,
 				7A7841F81FB4D48A00841C87 /* VirtualObjectARView.swift in Sources */,
 				7A7841DE1FB4D1D400841C87 /* ViewControllerObjectSelection.swift in Sources */,
 				38D3E3D61FB51A34001E7121 /* LaunchScreenCopyViewController.swift in Sources */,

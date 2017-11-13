@@ -10,8 +10,10 @@ import Foundation
 
 class ScoreController {
     static let shared = ScoreController()
-    
     var highScore = 0
+    var highScoreString: String {
+    return("\(highScore)")
+    }
     
     func addScore() -> Int {
         highScore = highScore + 1

@@ -85,6 +85,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="zee-sf-wSG"/>
                     <connections>
+                        <outlet property="highScoreLabel" destination="oOl-10-hGI" id="uBy-GV-IAQ"/>
                         <outlet property="playNowButton" destination="r76-1M-4cJ" id="6Xr-Vi-6wD"/>
                         <outlet property="resetHighScoreButton" destination="bqp-hY-23z" id="GNl-25-hoN"/>
                     </connections>
