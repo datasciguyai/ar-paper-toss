@@ -6,29 +6,69 @@
 //  Copyright © 2017 Jeremy Reynolds. All rights reserved.
 //
 
-//import ARKit
-//
-//enum BitTaskCategory: Int {
-//    case paper = 1
-//    case bucket = 2
-//
-//}
-//
-//class Contact: SCNPhysicsContactDelegate {
-//
-//    func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact) {
-//        let nodeA = contact.nodeA
-//        let NodeB = contact.nodeB
-//
-//    }
-//
-//    func whatsWhere(nodeA: SCNNode, nodeB: SCNNode) {
-//
-//        var touched = false
-//        if nodeA.physicsBody?.categoryBitMask ==
-//    }
-//
-//}
+import ARKit
+
+enum BitTaskCategory: Int {
+    case paper = 1
+    case cylinder = 2
+    case tube = 3
+
+}
+
+
+class Contact {
+    
+    
+    
+    static let shared = Contact()
+    
+    var cylinder: SCNNode?
+    var tube: SCNNode?
+    
+    
+     func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact) {
+        let nodeA = contact.nodeA
+        let NodeB = contact.nodeB
+        missedIt(nodeA: nodeA, nodeB: NodeB)
+        madeIt(nodeA: nodeA, nodeB: NodeB)
+        
+        
+        
+        
+    }
+
+     func missedIt(nodeA: SCNNode, nodeB: SCNNode) {
+        
+        var missed = false
+        if nodeA.physicsBody?.categoryBitMask == BitTaskCategory.tube.rawValue {
+            self.tube = nodeA
+            missed = true
+        } else if nodeB.physicsBody?.categoryBitMask == BitTaskCategory.tube.rawValue{
+            self.tube = nodeB
+            missed = true
+        }
+        if missed == true {
+            ScoreController.shared.reset()
+        }
+        
+    }
+    
+    func madeIt(nodeA: SCNNode, nodeB: SCNNode) {
+        var inBasket = false
+        
+        if nodeA.physicsBody?.categoryBitMask == BitTaskCategory.cylinder.rawValue {
+            self.cylinder = nodeA
+            inBasket = true
+        } else if nodeB.physicsBody?.categoryBitMask == BitTaskCategory.cylinder.rawValue {
+            self.cylinder = nodeB
+            inBasket = true
+        }
+        if inBasket == true {
+            ScoreController.shared.addScore()
+        }
+    }
+
+}
 
 
 

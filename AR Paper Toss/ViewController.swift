@@ -68,6 +68,10 @@ class ViewController: UIViewController {
             ballNode.position = location
             let velocity = abs(sender.velocity(in: arScene).y / CGFloat(300))
             ballNode.physicsBody?.applyForce(SCNVector3(orientation.x * Float(velocity), orientation.y * Float(velocity), orientation.z * Float(velocity)), asImpulse: true)
+            //Kadens added in code
+            ballNode.physicsBody?.categoryBitMask = BitTaskCategory.paper.rawValue
+            ballNode.physicsBody?.contactTestBitMask = BitTaskCategory.cylinder.rawValue
+            //Kadens added in code
             arScene.scene.rootNode.addChildNode(ballNode)
         default:
             break
@@ -104,6 +108,16 @@ class ViewController: UIViewController {
         let startupBin = SCNScene(named: "Models.scnassets/Classic-Bin.scn")
         let startupBinNode = startupBin?.rootNode.childNode(withName: "Classic-Bin", recursively: false)
         startupBinNode?.position = SCNVector3(0,0,-3)
+        
+        let startupBinCylinderNode = startupBin?.rootNode.childNode(withName: "Classic-Bin/cylinder", recursively: false)
+        startupBinCylinderNode?.physicsBody?.categoryBitMask = BitTaskCategory.cylinder.rawValue
+        startupBinCylinderNode?.physicsBody?.contactTestBitMask = BitTaskCategory.paper.rawValue
+        
+        let startUpBinTubeNode = startupBin?.rootNode.childNode(withName: "Classic-Bin/tube", recursively: false)
+        startUpBinTubeNode?.physicsBody?.categoryBitMask = BitTaskCategory.tube.rawValue
+        startUpBinTubeNode?.physicsBody?.contactTestBitMask = BitTaskCategory.paper.rawValue
+        
+        
         self.sceneView.scene.rootNode.addChildNode(startupBinNode!)
         
     }

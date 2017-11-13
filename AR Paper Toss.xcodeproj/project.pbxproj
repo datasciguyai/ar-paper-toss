@@ -415,7 +415,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3ZR9ND5B77;
+				DEVELOPMENT_TEAM = W6E3GKZT85;
 				INFOPLIST_FILE = "AR Paper Toss/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JeremyReynolds.AR-Paper-Toss";
@@ -430,7 +430,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3ZR9ND5B77;
+				DEVELOPMENT_TEAM = W6E3GKZT85;
 				INFOPLIST_FILE = "AR Paper Toss/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JeremyReynolds.AR-Paper-Toss";
