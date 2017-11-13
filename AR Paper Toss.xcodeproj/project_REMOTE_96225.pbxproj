@@ -1,0 +1,423 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		38D3E3D61FB51A34001E7121 /* LaunchScreenCopyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3E3D51FB51A34001E7121 /* LaunchScreenCopyViewController.swift */; };
+		7A7841DA1FB4D1C000841C87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841D91FB4D1BA00841C87 /* ViewController.swift */; };
+		7A7841DC1FB4D1C900841C87 /* ViewController+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841DB1FB4D1C900841C87 /* ViewController+ARSCNViewDelegate.swift */; };
+		7A7841DE1FB4D1D400841C87 /* ViewControllerObjectSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841DD1FB4D1D400841C87 /* ViewControllerObjectSelection.swift */; };
+		7A7841E01FB4D1E100841C87 /* ViewControllerActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841DF1FB4D1E000841C87 /* ViewControllerActions.swift */; };
+		7A7841E21FB4D1E900841C87 /* ThresholdPanGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841E11FB4D1E900841C87 /* ThresholdPanGesture.swift */; };
+		7A7841E41FB4D1F900841C87 /* HomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A7841E31FB4D1F800841C87 /* HomeScreen.storyboard */; };
+		7A7841E61FB4D23200841C87 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841E51FB4D23100841C87 /* HomeScreenViewController.swift */; };
+		7A7841E81FB4D23B00841C87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A7841E71FB4D23B00841C87 /* Main.storyboard */; };
+		7A7841EA1FB4D24300841C87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A7841E91FB4D24200841C87 /* LaunchScreen.storyboard */; };
+		7A7841EC1FB4D2AA00841C87 /* FocusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841EB1FB4D2AA00841C87 /* FocusSquare.swift */; };
+		7A7841EE1FB4D32200841C87 /* FocusSquareSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841ED1FB4D31F00841C87 /* FocusSquareSegment.swift */; };
+		7A7841F21FB4D44300841C87 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841F11FB4D44200841C87 /* Utilities.swift */; };
+		7A7841F41FB4D46700841C87 /* VirtualObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841F31FB4D46300841C87 /* VirtualObjects.swift */; };
+		7A7841F61FB4D47B00841C87 /* VirtualObjectLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841F51FB4D47B00841C87 /* VirtualObjectLoader.swift */; };
+		7A7841F81FB4D48A00841C87 /* VirtualObjectARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841F71FB4D48900841C87 /* VirtualObjectARView.swift */; };
+		7A7841FA1FB4D4AC00841C87 /* VirtualObjectInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841F91FB4D4AA00841C87 /* VirtualObjectInteraction.swift */; };
+		7A7841FC1FB4D4C500841C87 /* VirtualObjectSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841FB1FB4D4C400841C87 /* VirtualObjectSelection.swift */; };
+		7AA38C3B1FB4DB9700976DEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA38C3A1FB4DB9700976DEE /* AppDelegate.swift */; };
+		7AA38C3D1FB4DBA000976DEE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AA38C3C1FB4DBA000976DEE /* Info.plist */; };
+		7AA38C3F1FB4DBA800976DEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AA38C3E1FB4DBA800976DEE /* Assets.xcassets */; };
+		7AA38C411FB4DBB900976DEE /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AA38C401FB4DBB900976DEE /* Models.scnassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		38D3E3D51FB51A34001E7121 /* LaunchScreenCopyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenCopyViewController.swift; sourceTree = "<group>"; };
+		3F74FCA51FB0D16B003050A3 /* AR Paper Toss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AR Paper Toss.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7A7841D91FB4D1BA00841C87 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7A7841DB1FB4D1C900841C87 /* ViewController+ARSCNViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+ARSCNViewDelegate.swift"; sourceTree = "<group>"; };
+		7A7841DD1FB4D1D400841C87 /* ViewControllerObjectSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerObjectSelection.swift; sourceTree = "<group>"; };
+		7A7841DF1FB4D1E000841C87 /* ViewControllerActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerActions.swift; sourceTree = "<group>"; };
+		7A7841E11FB4D1E900841C87 /* ThresholdPanGesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThresholdPanGesture.swift; sourceTree = "<group>"; };
+		7A7841E31FB4D1F800841C87 /* HomeScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HomeScreen.storyboard; sourceTree = "<group>"; };
+		7A7841E51FB4D23100841C87 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		7A7841E71FB4D23B00841C87 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		7A7841E91FB4D24200841C87 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		7A7841EB1FB4D2AA00841C87 /* FocusSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusSquare.swift; sourceTree = "<group>"; };
+		7A7841ED1FB4D31F00841C87 /* FocusSquareSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusSquareSegment.swift; sourceTree = "<group>"; };
+		7A7841F11FB4D44200841C87 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		7A7841F31FB4D46300841C87 /* VirtualObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObjects.swift; sourceTree = "<group>"; };
+		7A7841F51FB4D47B00841C87 /* VirtualObjectLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObjectLoader.swift; sourceTree = "<group>"; };
+		7A7841F71FB4D48900841C87 /* VirtualObjectARView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObjectARView.swift; sourceTree = "<group>"; };
+		7A7841F91FB4D4AA00841C87 /* VirtualObjectInteraction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObjectInteraction.swift; sourceTree = "<group>"; };
+		7A7841FB1FB4D4C400841C87 /* VirtualObjectSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObjectSelection.swift; sourceTree = "<group>"; };
+		7AA38C3A1FB4DB9700976DEE /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7AA38C3C1FB4DBA000976DEE /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7AA38C3E1FB4DBA800976DEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7AA38C401FB4DBB900976DEE /* Models.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = Models.scnassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3F74FCA21FB0D16B003050A3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3F74FC9C1FB0D16B003050A3 = {
+			isa = PBXGroup;
+			children = (
+				3F74FCA71FB0D16B003050A3 /* AR Paper Toss */,
+				3F74FCA61FB0D16B003050A3 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3F74FCA61FB0D16B003050A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3F74FCA51FB0D16B003050A3 /* AR Paper Toss.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3F74FCA71FB0D16B003050A3 /* AR Paper Toss */ = {
+			isa = PBXGroup;
+			children = (
+				7A7841D91FB4D1BA00841C87 /* ViewController.swift */,
+				7A7841DB1FB4D1C900841C87 /* ViewController+ARSCNViewDelegate.swift */,
+				7A7841DD1FB4D1D400841C87 /* ViewControllerObjectSelection.swift */,
+				7A7841DF1FB4D1E000841C87 /* ViewControllerActions.swift */,
+				7A7841E11FB4D1E900841C87 /* ThresholdPanGesture.swift */,
+				7A7841D21FB4D10500841C87 /* Home Screen */,
+				7A7841D31FB4D11800841C87 /* Storyboards */,
+				7A7841D41FB4D13000841C87 /* VirtualObjects */,
+				7A7841D51FB4D14400841C87 /* FocusSquare */,
+				7AA38C421FB4DBED00976DEE /* Resources */,
+				7AA38C3A1FB4DB9700976DEE /* AppDelegate.swift */,
+				7AA38C3C1FB4DBA000976DEE /* Info.plist */,
+				7AA38C3E1FB4DBA800976DEE /* Assets.xcassets */,
+				7AA38C401FB4DBB900976DEE /* Models.scnassets */,
+				7A7841D71FB4D16500841C87 /* Utilities */,
+			);
+			path = "AR Paper Toss";
+			sourceTree = "<group>";
+		};
+		7A7841D21FB4D10500841C87 /* Home Screen */ = {
+			isa = PBXGroup;
+			children = (
+				7A7841E31FB4D1F800841C87 /* HomeScreen.storyboard */,
+				38D3E3D51FB51A34001E7121 /* LaunchScreenCopyViewController.swift */,
+				7A7841E51FB4D23100841C87 /* HomeScreenViewController.swift */,
+			);
+			path = "Home Screen";
+			sourceTree = "<group>";
+		};
+		7A7841D31FB4D11800841C87 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				7A7841E71FB4D23B00841C87 /* Main.storyboard */,
+				7A7841E91FB4D24200841C87 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		7A7841D41FB4D13000841C87 /* VirtualObjects */ = {
+			isa = PBXGroup;
+			children = (
+				7A7841F31FB4D46300841C87 /* VirtualObjects.swift */,
+				7A7841F51FB4D47B00841C87 /* VirtualObjectLoader.swift */,
+				7A7841F71FB4D48900841C87 /* VirtualObjectARView.swift */,
+				7A7841F91FB4D4AA00841C87 /* VirtualObjectInteraction.swift */,
+				7A7841FB1FB4D4C400841C87 /* VirtualObjectSelection.swift */,
+			);
+			path = VirtualObjects;
+			sourceTree = "<group>";
+		};
+		7A7841D51FB4D14400841C87 /* FocusSquare */ = {
+			isa = PBXGroup;
+			children = (
+				7A7841EB1FB4D2AA00841C87 /* FocusSquare.swift */,
+				7A7841ED1FB4D31F00841C87 /* FocusSquareSegment.swift */,
+			);
+			path = FocusSquare;
+			sourceTree = "<group>";
+		};
+		7A7841D71FB4D16500841C87 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				7A7841F11FB4D44200841C87 /* Utilities.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		7AA38C421FB4DBED00976DEE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3F74FCA41FB0D16B003050A3 /* AR Paper Toss */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3F74FCB91FB0D16C003050A3 /* Build configuration list for PBXNativeTarget "AR Paper Toss" */;
+			buildPhases = (
+				3F74FCA11FB0D16B003050A3 /* Sources */,
+				3F74FCA21FB0D16B003050A3 /* Frameworks */,
+				3F74FCA31FB0D16B003050A3 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AR Paper Toss";
+			productName = "AR Paper Toss";
+			productReference = 3F74FCA51FB0D16B003050A3 /* AR Paper Toss.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3F74FC9D1FB0D16B003050A3 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0910;
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Jeremy Reynolds";
+				TargetAttributes = {
+					3F74FCA41FB0D16B003050A3 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 3F74FCA01FB0D16B003050A3 /* Build configuration list for PBXProject "AR Paper Toss" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3F74FC9C1FB0D16B003050A3;
+			productRefGroup = 3F74FCA61FB0D16B003050A3 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3F74FCA41FB0D16B003050A3 /* AR Paper Toss */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3F74FCA31FB0D16B003050A3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A7841E81FB4D23B00841C87 /* Main.storyboard in Resources */,
+				7AA38C411FB4DBB900976DEE /* Models.scnassets in Resources */,
+				7A7841E41FB4D1F900841C87 /* HomeScreen.storyboard in Resources */,
+				7AA38C3D1FB4DBA000976DEE /* Info.plist in Resources */,
+				7A7841EA1FB4D24300841C87 /* LaunchScreen.storyboard in Resources */,
+				7AA38C3F1FB4DBA800976DEE /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3F74FCA11FB0D16B003050A3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A7841DC1FB4D1C900841C87 /* ViewController+ARSCNViewDelegate.swift in Sources */,
+				7A7841DA1FB4D1C000841C87 /* ViewController.swift in Sources */,
+				7A7841F81FB4D48A00841C87 /* VirtualObjectARView.swift in Sources */,
+				7A7841DE1FB4D1D400841C87 /* ViewControllerObjectSelection.swift in Sources */,
+				38D3E3D61FB51A34001E7121 /* LaunchScreenCopyViewController.swift in Sources */,
+				7A7841E01FB4D1E100841C87 /* ViewControllerActions.swift in Sources */,
+				7A7841EE1FB4D32200841C87 /* FocusSquareSegment.swift in Sources */,
+				7A7841F61FB4D47B00841C87 /* VirtualObjectLoader.swift in Sources */,
+				7A7841FA1FB4D4AC00841C87 /* VirtualObjectInteraction.swift in Sources */,
+				7AA38C3B1FB4DB9700976DEE /* AppDelegate.swift in Sources */,
+				7A7841EC1FB4D2AA00841C87 /* FocusSquare.swift in Sources */,
+				7A7841FC1FB4D4C500841C87 /* VirtualObjectSelection.swift in Sources */,
+				7A7841E21FB4D1E900841C87 /* ThresholdPanGesture.swift in Sources */,
+				7A7841F21FB4D44300841C87 /* Utilities.swift in Sources */,
+				7A7841E61FB4D23200841C87 /* HomeScreenViewController.swift in Sources */,
+				7A7841F41FB4D46700841C87 /* VirtualObjects.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3F74FCB71FB0D16C003050A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3F74FCB81FB0D16C003050A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3F74FCBA1FB0D16C003050A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FW95769X88;
+				INFOPLIST_FILE = "AR Paper Toss/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JeremyReynolds.AR-Paper-Toss";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3F74FCBB1FB0D16C003050A3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = FW95769X88;
+				INFOPLIST_FILE = "AR Paper Toss/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JeremyReynolds.AR-Paper-Toss";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3F74FCA01FB0D16B003050A3 /* Build configuration list for PBXProject "AR Paper Toss" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F74FCB71FB0D16C003050A3 /* Debug */,
+				3F74FCB81FB0D16C003050A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3F74FCB91FB0D16C003050A3 /* Build configuration list for PBXNativeTarget "AR Paper Toss" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3F74FCBA1FB0D16C003050A3 /* Debug */,
+				3F74FCBB1FB0D16C003050A3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3F74FC9D1FB0D16B003050A3 /* Project object */;
+}

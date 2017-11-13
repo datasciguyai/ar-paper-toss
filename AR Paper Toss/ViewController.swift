@@ -10,8 +10,66 @@ import UIKit
 import SceneKit
 import ARKit
 
-class ViewController: UIViewController {
+enum BitTaskCategory: Int {
+    case paper = 2
+    case cylinder = 3
+    case tube = 4
+    
+}
 
+class ViewController: UIViewController, SCNPhysicsContactDelegate {
+    
+    //kaden added begins
+    
+    var cylinder: SCNNode?
+    var tube: SCNNode?
+    
+    
+    func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact) {
+        let nodeA = contact.nodeA
+        let NodeB = contact.nodeB
+        missedIt(nodeA: nodeA, nodeB: NodeB)
+        madeIt(nodeA: nodeA, nodeB: NodeB)
+        
+    }
+    
+    func missedIt(nodeA: SCNNode, nodeB: SCNNode) {
+        
+        var missed = false
+        if nodeA.physicsBody?.categoryBitMask == BitTaskCategory.tube.rawValue {
+            self.tube = nodeA
+            missed = true
+        } else if nodeB.physicsBody?.categoryBitMask == BitTaskCategory.tube.rawValue{
+            self.tube = nodeB
+            missed = true
+        }
+        if missed == true {
+            ScoreController.shared.reset()
+        }
+        
+    }
+    
+    func madeIt(nodeA: SCNNode, nodeB: SCNNode) {
+        var inBasket = false
+        
+        if nodeA.physicsBody?.categoryBitMask == BitTaskCategory.cylinder.rawValue {
+            self.cylinder = nodeA
+            inBasket = true
+        } else if nodeB.physicsBody?.categoryBitMask == BitTaskCategory.cylinder.rawValue {
+            self.cylinder = nodeB
+            inBasket = true
+        }
+        if inBasket == true {
+            ScoreController.shared.addScore()
+        }
+    }
+    
+    //Kaden added ends
+    
+    
+    
+    
+    
     // Actions
     @IBOutlet var sceneView: VirtualObjectARView!
     @IBOutlet weak var addObjectButton: UIButton!
@@ -36,7 +94,7 @@ class ViewController: UIViewController {
         sceneView.delegate = self
         setupCamera()
         sceneView.scene.rootNode.addChildNode(focusSquare)
-        
+        self.sceneView.scene.physicsWorld.contactDelegate = self
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGestureRecognizer(sender:)))
         sceneView.addGestureRecognizer(panGestureRecognizer)
         
@@ -61,14 +119,17 @@ class ViewController: UIViewController {
     @objc func handlePanGestureRecognizer(sender: UIPanGestureRecognizer) {
         switch sender.state {
         case .ended:
-            guard let arScene = sender.view as? ARSCNView, let pointOfView = arScene.pointOfView, let paperScene = SCNScene(named: "Models.scnassets/Paper Ball/Paper-Ball.scn"), let ballNode = paperScene.rootNode.childNode(withName: "paperBall", recursively: false) else { return }
+            guard let arScene = sender.view as? ARSCNView, let pointOfView = arScene.pointOfView, let paperScene = SCNScene(named: "Models.scnassets/Paper Ball/Paper-Ball.scn"), let ballNode = (paperScene.rootNode.childNode(withName: "paperBall", recursively: false)) else { return }
             let transform = pointOfView.transform
             let orientation = SCNVector3(-transform.m31, -transform.m32, -transform.m33)
             let location = SCNVector3(transform.m41, transform.m42 - 0.2, transform.m43)
-            //            let position = orientation + location
+//                        let position = orientation + location
             ballNode.position = location
             let velocityX = abs(sender.velocity(in: arScene).x) / CGFloat(300)
             let velocity = abs(sender.velocity(in: arScene).y) / CGFloat(300)
+
+//            ballNode.physicsBody?.categoryBitMask = BitTaskCategory.paper.rawValue
+//            ballNode.physicsBody?.contactTestBitMask = BitTaskCategory.cylinder.rawValue
             
             ballNode.physicsBody?.applyForce(SCNVector3(orientation.x * Float(velocity), orientation.y * Float(-velocity), orientation.z * Float(velocity)), asImpulse: true)
             arScene.scene.rootNode.addChildNode(ballNode)
@@ -108,6 +169,11 @@ class ViewController: UIViewController {
         let startupBinNode = startupBin?.rootNode.childNode(withName: "bin", recursively: false)
         startupBinNode?.position = SCNVector3(0,0,-3)
         self.sceneView.scene.rootNode.addChildNode(startupBinNode!)
+        
+        startupBinNode?.physicsBody?.categoryBitMask = BitTaskCategory.cylinder.rawValue
+        startupBinNode?.physicsBody?.contactTestBitMask = BitTaskCategory.paper.rawValue
+
+        
         
     }
     
@@ -155,6 +221,9 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+
+    
 
 }
 
