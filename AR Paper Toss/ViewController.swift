@@ -73,6 +73,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
     // Actions
     @IBOutlet var sceneView: VirtualObjectARView!
     @IBOutlet weak var addObjectButton: UIButton!
+    @IBOutlet weak var instructionsLabel: UILabel!
     
     var session: ARSession {
         return sceneView.session
@@ -107,7 +108,8 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let configuration = ARWorldTrackingConfiguration()
-        sceneView.debugOptions = .showPhysicsShapes
+//        sceneView.debugOptions = .showPhysicsShapes
+        self.sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
         sceneView.session.run(configuration)
     }
     
@@ -197,8 +199,10 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
         
         if isObjectVisible {
             focusSquare.hide()
+            instructionsLabel.text = ""
         } else {
             focusSquare.unhide()
+            instructionsLabel.text = "Move camera around to detect floor and then push +/- to add a bin"
         }
         
         // We should always have a valid world position unless the sceen is just being initialized.
