@@ -24,10 +24,14 @@ class HomeScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setHighScore()
         playNowButton.layer.cornerRadius = 20
         resetHighScoreButton.layer.cornerRadius = 20
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        setHighScore()
     }
     
     

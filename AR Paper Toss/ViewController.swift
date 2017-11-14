@@ -119,7 +119,10 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
     @objc func handlePanGestureRecognizer(sender: UIPanGestureRecognizer) {
         switch sender.state {
         case .ended:
+            
             guard let arScene = sender.view as? ARSCNView, let pointOfView = arScene.pointOfView, let paperScene = SCNScene(named: "Models.scnassets/Paper Ball/Paper-Ball.scn"), let ballNode = (paperScene.rootNode.childNode(withName: "paperBall", recursively: false)) else { return }
+            
+            
             let transform = pointOfView.transform
             let orientation = SCNVector3(-transform.m31, -transform.m32, -transform.m33)
             let location = SCNVector3(transform.m41, transform.m42 - 0.2, transform.m43)
