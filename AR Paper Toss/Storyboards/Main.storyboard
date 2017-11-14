@@ -27,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XTE-Ar-wxZ" customClass="VirtualObjectARView" customModule="AR_Paper_Toss" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="814"/>
                             </arscnView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOQ-wG-h1i">
                                 <rect key="frame" x="20" y="688" width="70" height="70"/>
@@ -62,7 +62,7 @@
                             <constraint firstItem="uOQ-wG-h1i" firstAttribute="leading" secondItem="HAU-y0-gOq" secondAttribute="leading" constant="20" id="GfY-zp-1fV"/>
                             <constraint firstItem="HAU-y0-gOq" firstAttribute="bottom" secondItem="uOQ-wG-h1i" secondAttribute="bottom" constant="20" id="Jz3-yn-g9I"/>
                             <constraint firstItem="XTE-Ar-wxZ" firstAttribute="leading" secondItem="HAU-y0-gOq" secondAttribute="leading" id="pjP-ur-jOu"/>
-                            <constraint firstItem="XTE-Ar-wxZ" firstAttribute="bottom" secondItem="HAU-y0-gOq" secondAttribute="bottom" id="sfH-ws-KKY"/>
+                            <constraint firstItem="XTE-Ar-wxZ" firstAttribute="bottom" secondItem="HAU-y0-gOq" secondAttribute="bottom" constant="36" id="sfH-ws-KKY"/>
                             <constraint firstItem="HAU-y0-gOq" firstAttribute="trailing" secondItem="GY8-D0-SCK" secondAttribute="trailing" constant="20" id="xPU-Pe-28M"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HAU-y0-gOq"/>
