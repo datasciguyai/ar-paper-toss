@@ -10,10 +10,10 @@ import UIKit
 import SceneKit
 import ARKit
 
-enum BitTaskCategory: Int {
-    case paper = 2
-    case cylinder = 3
-    case tube = 4
+enum BitMaskCategory: Int {
+    case paper = 3
+    case cylinder = 4
+    case tube = 5
     
 }
 
@@ -23,6 +23,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
     
     var cylinder: SCNNode?
     var tube: SCNNode?
+    var paperBalls: [SCNNode]?
     
     
     func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact) {
@@ -36,10 +37,10 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
     func missedIt(nodeA: SCNNode, nodeB: SCNNode) {
         
         var missed = false
-        if nodeA.physicsBody?.categoryBitMask == BitTaskCategory.tube.rawValue {
+        if nodeA.physicsBody?.categoryBitMask == BitMaskCategory.tube.rawValue {
             self.tube = nodeA
             missed = true
-        } else if nodeB.physicsBody?.categoryBitMask == BitTaskCategory.tube.rawValue{
+        } else if nodeB.physicsBody?.categoryBitMask == BitMaskCategory.tube.rawValue{
             self.tube = nodeB
             missed = true
         }
@@ -52,10 +53,10 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
     func madeIt(nodeA: SCNNode, nodeB: SCNNode) {
         var inBasket = false
         
-        if nodeA.physicsBody?.categoryBitMask == BitTaskCategory.cylinder.rawValue {
+        if nodeA.physicsBody?.categoryBitMask == BitMaskCategory.cylinder.rawValue {
             self.cylinder = nodeA
             inBasket = true
-        } else if nodeB.physicsBody?.categoryBitMask == BitTaskCategory.cylinder.rawValue {
+        } else if nodeB.physicsBody?.categoryBitMask == BitMaskCategory.cylinder.rawValue {
             self.cylinder = nodeB
             inBasket = true
         }
@@ -129,12 +130,25 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
             ballNode.position = location
             let velocityX = abs(sender.velocity(in: arScene).x) / CGFloat(300)
             let velocity = abs(sender.velocity(in: arScene).y) / CGFloat(300)
+            
+            ballNode.physicsBody = SCNPhysicsBody(type: .dynamic, shape: SCNPhysicsShape(node: ballNode, options: [SCNPhysicsShape.Option.scale:ballNode.scale]))
+            ballNode.physicsBody?.friction = 0.75
 
-//            ballNode.physicsBody?.categoryBitMask = BitTaskCategory.paper.rawValue
-//            ballNode.physicsBody?.contactTestBitMask = BitTaskCategory.cylinder.rawValue
+            ballNode.physicsBody?.categoryBitMask = BitMaskCategory.paper.rawValue
+            ballNode.physicsBody?.contactTestBitMask = BitMaskCategory.cylinder.rawValue
             
             ballNode.physicsBody?.applyForce(SCNVector3(orientation.x * Float(velocity), orientation.y * Float(-velocity), orientation.z * Float(velocity)), asImpulse: true)
             arScene.scene.rootNode.addChildNode(ballNode)
+            if paperBalls == nil {
+                paperBalls = []
+            }
+            paperBalls?.append(ballNode)
+            if let paperBalls = paperBalls {
+                if paperBalls.count > 5 {
+                    paperBalls.first?.removeFromParentNode()
+                    self.paperBalls?.removeFirst()
+                }
+            }
         default:
             break
         }
@@ -172,22 +186,8 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
         startupBinNode?.position = SCNVector3(0,0,-3)
         self.sceneView.scene.rootNode.addChildNode(startupBinNode!)
         
-        startupBinNode?.physicsBody?.categoryBitMask = BitTaskCategory.cylinder.rawValue
-        startupBinNode?.physicsBody?.contactTestBitMask = BitTaskCategory.paper.rawValue
-        
-        
-        // Add code to create a floating AR Score over the trashcan
-        let text = SCNText(string: "131", extrusionDepth: 3)
-        let material = SCNMaterial()
-        material.diffuse.contents = UIColor.blue
-        text.materials = [material]
-        let textNode = SCNNode()
-        textNode.geometry = text
-  
-        
-        startupBinNode?.addChildNode(textNode)
-        
-        textNode.position = SCNVector3(0,0.1,0)
+        startupBinNode?.physicsBody?.categoryBitMask = BitMaskCategory.cylinder.rawValue
+        startupBinNode?.physicsBody?.contactTestBitMask = BitMaskCategory.paper.rawValue
 
         
         
