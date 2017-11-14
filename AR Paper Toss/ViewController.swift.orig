@@ -10,11 +10,93 @@ import UIKit
 import SceneKit
 import ARKit
 
-class ViewController: UIViewController {
+enum BitTaskCategory: Int {
+    case paper = 3
+    case cylinder = 1
+    case tube = 5
+    
+}
 
+class ViewController: UIViewController, SCNPhysicsContactDelegate {
+    
+    //kaden added begins
+    
+    var cylinder: SCNNode?
+    var tube: SCNNode?
+    var paperBalls: [SCNNode]?
+    var scoredNodes: [SCNNode] = []
+    
+    
+    
+    func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact) {
+        let nodeA = contact.nodeA
+        let nodeB = contact.nodeB
+        madeIt(nodeA: nodeA, nodeB: nodeB)
+    }
+    
+//    func missedIt(nodeA: SCNNode, nodeB: SCNNode) {
+//
+//        var missed = false
+//        if nodeA.physicsBody?.categoryBitMask == BitMaskCategory.tube.rawValue {
+//            self.tube = nodeA
+//            missed = true
+//        } else if nodeB.physicsBody?.categoryBitMask == BitMaskCategory.tube.rawValue{
+//            self.tube = nodeB
+//            missed = true
+//        }
+//        if missed == true {
+//            if nodeA.name == "paperBall" {
+//                if !scoredNodes.contains(nodeA) {
+//                    ScoreController.shared.addScore()
+//                    scoredNodes.append(nodeA)
+//                }
+//            } else if nodeB.name == "paperBall" {
+//                if !scoredNodes.contains(nodeB) {
+//                    ScoreController.shared.addScore()
+//                    scoredNodes.append(nodeB)
+//                }
+//            }
+//        }
+//
+//    }
+    
+    func madeIt(nodeA: SCNNode, nodeB: SCNNode) {
+        var inBasket = false
+        
+        if nodeA.physicsBody?.categoryBitMask == BitTaskCategory.cylinder.rawValue {
+            self.cylinder = nodeA
+            inBasket = true
+        } else if nodeB.physicsBody?.categoryBitMask == BitTaskCategory.cylinder.rawValue {
+            self.cylinder = nodeB
+            inBasket = true
+        }
+        if inBasket == true {
+            if nodeA.name == "paperBall" {
+                if !scoredNodes.contains(nodeA) {
+                    scoredNodes.append(nodeA)
+                    ScoreController.shared.addScore()
+                    print("hit")
+                }
+            } else if nodeB.name == "paperBall" {
+                if !scoredNodes.contains(nodeB) {
+                    scoredNodes.append(nodeB)
+                    ScoreController.shared.addScore()
+                    print("hit")
+                }
+            }
+        }
+    }
+    
+    //Kaden added ends
+    
+    
+    
+    
+    
     // Actions
     @IBOutlet var sceneView: VirtualObjectARView!
     @IBOutlet weak var addObjectButton: UIButton!
+    @IBOutlet weak var instructionsLabel: UILabel!
     
     var session: ARSession {
         return sceneView.session
@@ -35,8 +117,11 @@ class ViewController: UIViewController {
         
         sceneView.delegate = self
         setupCamera()
+        let configuration = ARWorldTrackingConfiguration()
+
         sceneView.scene.rootNode.addChildNode(focusSquare)
-        
+        self.sceneView.session.run(configuration)
+        self.sceneView.scene.physicsWorld.contactDelegate = self
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGestureRecognizer(sender:)))
         sceneView.addGestureRecognizer(panGestureRecognizer)
         
@@ -48,8 +133,16 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+<<<<<<< HEAD
+//        let configuration = ARWorldTrackingConfiguration()
+//        sceneView.debugOptions = .showPhysicsShapes
+        self.sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
+//        sceneView.session.run(configuration)
+=======
         let configuration = ARWorldTrackingConfiguration()
+        self.sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, .showPhysicsShapes]
         sceneView.session.run(configuration)
+>>>>>>> develop
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -60,19 +153,36 @@ class ViewController: UIViewController {
     @objc func handlePanGestureRecognizer(sender: UIPanGestureRecognizer) {
         switch sender.state {
         case .ended:
-            guard let arScene = sender.view as? ARSCNView, let pointOfView = arScene.pointOfView, let paperScene = SCNScene(named: "Models.scnassets/Paper Ball/Paper-Ball.scn"), let ballNode = paperScene.rootNode.childNode(withName: "paperBall", recursively: false) else { return }
+            
+            guard let arScene = sender.view as? ARSCNView, let pointOfView = arScene.pointOfView, let paperScene = SCNScene(named: "Models.scnassets/Paper Ball/Paper-Ball.scn"), let ballNode = (paperScene.rootNode.childNode(withName: "paperBall", recursively: false)) else { return }
+            
+            
             let transform = pointOfView.transform
             let orientation = SCNVector3(-transform.m31, -transform.m32, -transform.m33)
             let location = SCNVector3(transform.m41, transform.m42 - 0.2, transform.m43)
-            //            let position = orientation + location
+//                        let position = orientation + location
             ballNode.position = location
-<<<<<<< HEAD
-            let velocity = abs(sender.velocity(in: arScene).y / CGFloat(200))
-=======
-            let velocity = abs(sender.velocity(in: arScene).y / CGFloat(10))
->>>>>>> develop
-            ballNode.physicsBody?.applyForce(SCNVector3(orientation.x * Float(velocity), orientation.y * Float(velocity), orientation.z * Float(velocity)), asImpulse: true)
+            let velocityX = abs(sender.velocity(in: arScene).x) / CGFloat(300)
+            let velocity = abs(sender.velocity(in: arScene).y) / CGFloat(300)
+            ballNode.name = "paperBall"
+            ballNode.physicsBody = SCNPhysicsBody(type: .dynamic, shape: SCNPhysicsShape(node: ballNode, options: [SCNPhysicsShape.Option.scale:ballNode.scale]))
+            ballNode.physicsBody?.friction = 0.75
+
+            ballNode.physicsBody?.categoryBitMask = BitTaskCategory.paper.rawValue
+            ballNode.physicsBody?.contactTestBitMask = BitTaskCategory.cylinder.rawValue
+            
+            ballNode.physicsBody?.applyForce(SCNVector3(orientation.x * Float(velocity), orientation.y * Float(-velocity), orientation.z * Float(velocity)), asImpulse: true)
             arScene.scene.rootNode.addChildNode(ballNode)
+            if paperBalls == nil {
+                paperBalls = []
+            }
+            paperBalls?.append(ballNode)
+            if let paperBalls = paperBalls {
+                if paperBalls.count > 500 {
+                    paperBalls.first?.removeFromParentNode()
+                    self.paperBalls?.removeFirst()
+                }
+            }
         default:
             break
         }
@@ -106,9 +216,16 @@ class ViewController: UIViewController {
         // Add Code to create initial bin in viewDidLoad
 
         let startupBin = SCNScene(named: "Models.scnassets/Classic-Bin.scn")
-        let startupBinNode = startupBin?.rootNode.childNode(withName: "Classic-Bin", recursively: false)
+        let startupBinNode = startupBin?.rootNode.childNode(withName: "MACOSX_paper_bin_fixed", recursively: false)
         startupBinNode?.position = SCNVector3(0,0,-3)
         self.sceneView.scene.rootNode.addChildNode(startupBinNode!)
+        startupBinNode?.physicsBody = SCNPhysicsBody(type: .kinematic, shape: SCNPhysicsShape(node: startupBinNode!, options: nil))
+        
+        
+        startupBinNode?.physicsBody?.categoryBitMask = BitTaskCategory.cylinder.rawValue
+        startupBinNode?.physicsBody?.contactTestBitMask = BitTaskCategory.paper.rawValue
+
+        
         
     }
     
@@ -132,8 +249,10 @@ class ViewController: UIViewController {
         
         if isObjectVisible {
             focusSquare.hide()
+            instructionsLabel.text = ""
         } else {
             focusSquare.unhide()
+            instructionsLabel.text = "Move camera around to detect floor and then push +/- to add a bin"
         }
         
         // We should always have a valid world position unless the sceen is just being initialized.
@@ -156,6 +275,9 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+
+    
 
 }
 
