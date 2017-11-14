@@ -109,8 +109,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let configuration = ARWorldTrackingConfiguration()
-//        sceneView.debugOptions = .showPhysicsShapes
-        self.sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
+        self.sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, .showPhysicsShapes]
         sceneView.session.run(configuration)
     }
     
@@ -144,7 +143,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
             }
             paperBalls?.append(ballNode)
             if let paperBalls = paperBalls {
-                if paperBalls.count > 5 {
+                if paperBalls.count > 500 {
                     paperBalls.first?.removeFromParentNode()
                     self.paperBalls?.removeFirst()
                 }
@@ -181,8 +180,8 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
         
         // Add Code to create initial bin in viewDidLoad
 
-        let startupBin = SCNScene(named: "Models.scnassets/Test-Bin.scn")
-        let startupBinNode = startupBin?.rootNode.childNode(withName: "bin", recursively: false)
+        let startupBin = SCNScene(named: "Models.scnassets/Classic-Bin.scn")
+        let startupBinNode = startupBin?.rootNode.childNode(withName: "MACOSX_paper_bin_fixed", recursively: false)
         startupBinNode?.position = SCNVector3(0,0,-3)
         self.sceneView.scene.rootNode.addChildNode(startupBinNode!)
         
