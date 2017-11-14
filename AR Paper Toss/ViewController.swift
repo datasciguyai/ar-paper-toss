@@ -174,6 +174,20 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
         
         startupBinNode?.physicsBody?.categoryBitMask = BitTaskCategory.cylinder.rawValue
         startupBinNode?.physicsBody?.contactTestBitMask = BitTaskCategory.paper.rawValue
+        
+        
+        // Add code to create a floating AR Score over the trashcan
+        let text = SCNText(string: "131", extrusionDepth: 3)
+        let material = SCNMaterial()
+        material.diffuse.contents = UIColor.blue
+        text.materials = [material]
+        let textNode = SCNNode()
+        textNode.geometry = text
+  
+        
+        startupBinNode?.addChildNode(textNode)
+        
+        textNode.position = SCNVector3(0,0.1,0)
 
         
         
