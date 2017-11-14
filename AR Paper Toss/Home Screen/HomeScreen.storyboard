@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="Paper Toss AR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="erK-vr-uEr">
-                                <rect key="frame" x="0.0" y="44" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="50"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="43"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -50,7 +50,7 @@
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HighScore: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOl-10-hGI">
-                                <rect key="frame" x="0.0" y="100.99999999999999" width="375" height="58.333333333333329"/>
+                                <rect key="frame" x="0.0" y="120.99999999999999" width="375" height="38.333333333333329"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -67,7 +67,7 @@
                             <constraint firstItem="bqp-hY-23z" firstAttribute="centerX" secondItem="cBp-gM-7Bk" secondAttribute="centerX" id="B6l-cc-MxK"/>
                             <constraint firstItem="bqp-hY-23z" firstAttribute="top" secondItem="r76-1M-4cJ" secondAttribute="bottom" constant="8.6666666666666288" id="DD0-eE-0iO"/>
                             <constraint firstItem="r76-1M-4cJ" firstAttribute="top" secondItem="CjC-sB-CKm" secondAttribute="bottom" constant="30" id="GuQ-v4-2SZ"/>
-                            <constraint firstItem="erK-vr-uEr" firstAttribute="top" secondItem="VbX-MY-IRM" secondAttribute="top" id="IRX-Sv-Ebn"/>
+                            <constraint firstItem="erK-vr-uEr" firstAttribute="top" secondItem="VbX-MY-IRM" secondAttribute="top" constant="20" id="IRX-Sv-Ebn"/>
                             <constraint firstItem="VbX-MY-IRM" firstAttribute="bottom" secondItem="bqp-hY-23z" secondAttribute="bottom" constant="8" id="JQj-9o-Jqn"/>
                             <constraint firstItem="CjC-sB-CKm" firstAttribute="width" secondItem="cBp-gM-7Bk" secondAttribute="width" multiplier="3/4" id="Li9-z5-Mss"/>
                             <constraint firstItem="erK-vr-uEr" firstAttribute="width" secondItem="cBp-gM-7Bk" secondAttribute="width" id="ZNX-PO-d8y"/>
@@ -118,7 +118,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paper Toss AR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2tD-Es-Jxm">
-                                <rect key="frame" x="0.0" y="44" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="50"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="43"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -130,7 +130,7 @@
                             <constraint firstItem="3Cv-Wk-RYX" firstAttribute="centerY" secondItem="SMf-y9-Fmr" secondAttribute="centerY" id="8qM-hi-eWj"/>
                             <constraint firstItem="2tD-Es-Jxm" firstAttribute="width" secondItem="SMf-y9-Fmr" secondAttribute="width" id="DjP-0r-x1y"/>
                             <constraint firstItem="2tD-Es-Jxm" firstAttribute="centerX" secondItem="SMf-y9-Fmr" secondAttribute="centerX" id="ckA-cK-5sy"/>
-                            <constraint firstItem="2tD-Es-Jxm" firstAttribute="top" secondItem="Z0Q-Zl-K3u" secondAttribute="top" id="iZL-q2-Rgy"/>
+                            <constraint firstItem="2tD-Es-Jxm" firstAttribute="top" secondItem="Z0Q-Zl-K3u" secondAttribute="top" constant="20" id="iZL-q2-Rgy"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Z0Q-Zl-K3u"/>
                     </view>

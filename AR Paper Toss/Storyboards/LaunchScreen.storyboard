@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,18 +20,18 @@
             <objects>
                 <viewController id="01J-lp-oVM" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trash Icon" translatesAutoresizingMaskIntoConstraints="NO" id="VWd-os-6yh">
-                                <rect key="frame" x="81" y="263" width="212" height="287"/>
+                                <rect key="frame" x="101" y="224.66666666666663" width="212" height="287"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="212" id="sXW-sV-s7z"/>
                                     <constraint firstAttribute="height" constant="287" id="w5b-L7-hOx"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paper Toss AR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="icQ-s5-Rmv">
-                                <rect key="frame" x="0.0" y="44" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="40" width="414" height="50"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="43"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -39,7 +39,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.07997605949640274" green="0.31948548555374146" blue="0.58760559558868408" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="icQ-s5-Rmv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="3mN-jB-oBy"/>
+                            <constraint firstItem="icQ-s5-Rmv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="3mN-jB-oBy"/>
                             <constraint firstItem="icQ-s5-Rmv" firstAttribute="width" secondItem="Ze5-6b-2t3" secondAttribute="width" id="ZA4-b4-X6T"/>
                             <constraint firstItem="icQ-s5-Rmv" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="e9v-77-Qe9"/>
                             <constraint firstItem="VWd-os-6yh" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="fNb-s9-FOR"/>

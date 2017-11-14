@@ -9,6 +9,11 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AmericanTypewriter.ttc">
+            <string>AmericanTypewriter</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--HomeScreen-->
         <scene sceneID="lpV-uo-Uu9">
@@ -27,21 +32,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XTE-Ar-wxZ" customClass="VirtualObjectARView" customModule="AR_Paper_Toss" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="814"/>
                             </arscnView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GY8-D0-SCK">
-                                <rect key="frame" x="147.66666666666666" y="738" width="80" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="0Gh-UZ-3gh"/>
-                                    <constraint firstAttribute="height" constant="40" id="cX5-qq-ZkW"/>
-                                </constraints>
-                                <state key="normal" title="Add Bin"/>
-                                <connections>
-                                    <segue destination="dD2-sJ-3kf" kind="popoverPresentation" identifier="showObjects" popoverAnchorView="GY8-D0-SCK" id="1Sb-N8-5Pz">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOQ-wG-h1i">
                                 <rect key="frame" x="20" y="688" width="70" height="70"/>
                                 <constraints>
@@ -53,31 +45,44 @@
                                     <segue destination="cGh-R1-hoQ" kind="show" id="Mz5-5N-Ie6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="igp-Q0-RVs">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GY8-D0-SCK">
                                 <rect key="frame" x="285" y="688" width="70" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="PaB-Ra-IGS"/>
-                                    <constraint firstAttribute="width" constant="70" id="fHd-lb-LfS"/>
+                                    <constraint firstAttribute="height" constant="70" id="T3k-om-StV"/>
+                                    <constraint firstAttribute="width" constant="70" id="wVk-Un-3dV"/>
                                 </constraints>
-                                <state key="normal" image="ResetButton"/>
+                                <state key="normal" image="+-"/>
+                                <connections>
+                                    <segue destination="dD2-sJ-3kf" kind="popoverPresentation" identifier="showObjects" popoverAnchorView="GY8-D0-SCK" id="1Sb-N8-5Pz">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
+                                </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jn5-To-3lk">
+                                <rect key="frame" x="0.0" y="64" width="375" height="25"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="21"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.15256109833717346" green="0.31394040584564209" blue="0.56867575645446777" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="XTE-Ar-wxZ" firstAttribute="trailing" secondItem="HAU-y0-gOq" secondAttribute="trailing" id="48W-Cl-jjQ"/>
+                            <constraint firstItem="jn5-To-3lk" firstAttribute="width" secondItem="XTE-Ar-wxZ" secondAttribute="width" id="4PE-ny-BYI"/>
+                            <constraint firstItem="HAU-y0-gOq" firstAttribute="bottom" secondItem="GY8-D0-SCK" secondAttribute="bottom" constant="20" id="6xA-Fb-Wu7"/>
                             <constraint firstItem="XTE-Ar-wxZ" firstAttribute="top" secondItem="AdH-Nw-Ry2" secondAttribute="top" id="BPf-Pu-rT4"/>
                             <constraint firstItem="uOQ-wG-h1i" firstAttribute="leading" secondItem="HAU-y0-gOq" secondAttribute="leading" constant="20" id="GfY-zp-1fV"/>
                             <constraint firstItem="HAU-y0-gOq" firstAttribute="bottom" secondItem="uOQ-wG-h1i" secondAttribute="bottom" constant="20" id="Jz3-yn-g9I"/>
-                            <constraint firstItem="HAU-y0-gOq" firstAttribute="bottom" secondItem="igp-Q0-RVs" secondAttribute="bottom" constant="20" id="Ppo-Jz-t29"/>
-                            <constraint firstItem="GY8-D0-SCK" firstAttribute="bottom" secondItem="HAU-y0-gOq" secondAttribute="bottom" id="Y3w-Tx-xsf"/>
-                            <constraint firstItem="HAU-y0-gOq" firstAttribute="trailing" secondItem="igp-Q0-RVs" secondAttribute="trailing" constant="20" id="a9k-AV-0Zq"/>
-                            <constraint firstItem="GY8-D0-SCK" firstAttribute="centerX" secondItem="AdH-Nw-Ry2" secondAttribute="centerX" id="k4S-AF-bh2"/>
+                            <constraint firstItem="jn5-To-3lk" firstAttribute="top" secondItem="HAU-y0-gOq" secondAttribute="top" constant="20" id="Nqe-En-f5e"/>
                             <constraint firstItem="XTE-Ar-wxZ" firstAttribute="leading" secondItem="HAU-y0-gOq" secondAttribute="leading" id="pjP-ur-jOu"/>
-                            <constraint firstItem="XTE-Ar-wxZ" firstAttribute="bottom" secondItem="HAU-y0-gOq" secondAttribute="bottom" id="sfH-ws-KKY"/>
+                            <constraint firstItem="jn5-To-3lk" firstAttribute="centerX" secondItem="AdH-Nw-Ry2" secondAttribute="centerX" id="q9f-xr-c7P"/>
+                            <constraint firstItem="XTE-Ar-wxZ" firstAttribute="bottom" secondItem="HAU-y0-gOq" secondAttribute="bottom" constant="36" id="sfH-ws-KKY"/>
+                            <constraint firstItem="HAU-y0-gOq" firstAttribute="trailing" secondItem="GY8-D0-SCK" secondAttribute="trailing" constant="20" id="xPU-Pe-28M"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HAU-y0-gOq"/>
                     </view>
                     <connections>
+                        <outlet property="instructionsLabel" destination="jn5-To-3lk" id="bGT-Y4-21A"/>
                         <outlet property="sceneView" destination="XTE-Ar-wxZ" id="H5C-M7-7jM"/>
                     </connections>
                 </viewController>
@@ -146,7 +151,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="+-" width="183" height="183"/>
         <image name="BackButton" width="183" height="183"/>
-        <image name="ResetButton" width="183" height="183"/>
     </resources>
 </document>
