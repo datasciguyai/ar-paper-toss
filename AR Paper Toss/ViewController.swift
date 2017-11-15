@@ -49,12 +49,12 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
         if missed == true {
             if nodeA.name == "paperBall" {
                 if !scoredNodes.contains(nodeA) {
-                    ScoreController.shared.reset()
+                    ScoreController.shared.missed()
                     scoredNodes.append(nodeA)
                 }
             } else if nodeB.name == "paperBall" {
                 if !scoredNodes.contains(nodeB) {
-                    ScoreController.shared.reset()
+                    ScoreController.shared.missed()
                     scoredNodes.append(nodeB)
                 }
             }
@@ -165,6 +165,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
 
             ballNode.physicsBody?.categoryBitMask = BitTaskCategory.paper.rawValue
             ballNode.physicsBody?.contactTestBitMask = BitTaskCategory.cylinder.rawValue
+            ballNode.physicsBody?.contactTestBitMask = BitTaskCategory.floor.rawValue
             
             ballNode.physicsBody?.applyForce(SCNVector3(orientation.x * Float(velocity), orientation.y * Float(-velocity), orientation.z * Float(velocity)), asImpulse: true)
             arScene.scene.rootNode.addChildNode(ballNode)

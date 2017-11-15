@@ -10,18 +10,32 @@ import Foundation
 
 class ScoreController {
     static let shared = ScoreController()
+    var currentScore = 0
     var highScore = 0
+    
+    
+    
     var highScoreString: String {
         return("HighScore: \(highScore)")
     }
     
     func addScore() -> Int {
-        highScore = highScore + 1
-        return(highScore)
+        currentScore = currentScore + 1
+        print("score added \(currentScore)")
+        return(currentScore)
+    }
+    
+    func missed() -> Int {
+        currentScore = 0
+        print("\(currentScore)")
+        return(currentScore)
     }
     
     func reset() -> String {
-        highScore = 0
-        return("HighScore: \(highScore)")
+        return("HighScore: \(0)")
     }
+    
+    
+    
+    
 }
