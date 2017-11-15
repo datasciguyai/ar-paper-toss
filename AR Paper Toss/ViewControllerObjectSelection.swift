@@ -37,11 +37,10 @@ extension ViewController: VirtualObjectSelectionViewControllerDelegate {
     func virtualObjectSelectionViewController(_: VirtualObjectSelectionViewController, didSelectObject object: VirtualObject) {
         virtualObjectLoader.loadVirtualObject(object, loadedHandler: { [unowned self] loadedObject in
             DispatchQueue.main.async {
-               
                 self.placeVirtualObject(loadedObject)
+                self.paperBinPlaced = true
             }
         })
-        
     }
     
     func virtualObjectSelectionViewController(_: VirtualObjectSelectionViewController, didDeselectObject object: VirtualObject) {
@@ -49,6 +48,10 @@ extension ViewController: VirtualObjectSelectionViewControllerDelegate {
             fatalError("Programmer error: Failed to lookup virtual object in scene.")
         }
         virtualObjectLoader.removeVirtualObject(at: objectIndex)
+        for balls in paperBalls {
+            balls.removeFromParentNode()
+        }
+        paperBalls.removeAll()
+        paperBinPlaced = false
     }
-  
 }

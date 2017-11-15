@@ -26,6 +26,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
     var floor: SCNNode?
     var paperBalls: [SCNNode] = []
     var scoredNodes: [SCNNode] = []
+    var paperBinPlaced = false
     
     func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact) {
         let nodeA = contact.nodeA
@@ -143,7 +144,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
         switch sender.state {
         case .ended:
             
-            guard let arScene = sender.view as? ARSCNView, let pointOfView = arScene.pointOfView, let paperScene = SCNScene(named: "Models.scnassets/Paper Ball/Paper-Ball.scn"), let ballNode = (paperScene.rootNode.childNode(withName: "paperBall", recursively: false)) else { return }
+            guard paperBinPlaced, let arScene = sender.view as? ARSCNView, let pointOfView = arScene.pointOfView, let paperScene = SCNScene(named: "Models.scnassets/Paper Ball/Paper-Ball.scn"), let ballNode = (paperScene.rootNode.childNode(withName: "paperBall", recursively: false)) else { return }
             
             let transform = pointOfView.transform
             let orientation = SCNVector3(-transform.m31, -transform.m32, -transform.m33)
@@ -160,7 +161,6 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
                     paperBalls.first?.removeFromParentNode()
                     self.paperBalls.removeFirst()
                 }
-            print(paperBalls.count)
         default:
             break
         }
