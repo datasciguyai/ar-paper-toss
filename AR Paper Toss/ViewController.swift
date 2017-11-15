@@ -13,7 +13,7 @@ import ARKit
 enum BitTaskCategory: Int {
     case paper = 3
     case cylinder = 1
-    case tube = 5
+    case floor = 14
     
 }
 
@@ -23,6 +23,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
     
     var cylinder: SCNNode?
     var tube: SCNNode?
+    var floor: SCNNode?
     var paperBalls: [SCNNode]?
     var scoredNodes: [SCNNode] = []
     
@@ -31,34 +32,35 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
     func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact) {
         let nodeA = contact.nodeA
         let nodeB = contact.nodeB
+        missedIt(nodeA: nodeA, nodeB: nodeB)
         madeIt(nodeA: nodeA, nodeB: nodeB)
     }
     
-//    func missedIt(nodeA: SCNNode, nodeB: SCNNode) {
-//
-//        var missed = false
-//        if nodeA.physicsBody?.categoryBitMask == BitMaskCategory.tube.rawValue {
-//            self.tube = nodeA
-//            missed = true
-//        } else if nodeB.physicsBody?.categoryBitMask == BitMaskCategory.tube.rawValue{
-//            self.tube = nodeB
-//            missed = true
-//        }
-//        if missed == true {
-//            if nodeA.name == "paperBall" {
-//                if !scoredNodes.contains(nodeA) {
-//                    ScoreController.shared.addScore()
-//                    scoredNodes.append(nodeA)
-//                }
-//            } else if nodeB.name == "paperBall" {
-//                if !scoredNodes.contains(nodeB) {
-//                    ScoreController.shared.addScore()
-//                    scoredNodes.append(nodeB)
-//                }
-//            }
-//        }
-//
-//    }
+    func missedIt(nodeA: SCNNode, nodeB: SCNNode) {
+
+        var missed = false
+        if nodeA.physicsBody?.categoryBitMask == BitTaskCategory.floor.rawValue {
+            self.floor = nodeA
+            missed = true
+        } else if nodeB.physicsBody?.categoryBitMask == BitTaskCategory.floor.rawValue{
+            self.floor = nodeB
+            missed = true
+        }
+        if missed == true {
+            if nodeA.name == "paperBall" {
+                if !scoredNodes.contains(nodeA) {
+                    ScoreController.shared.reset()
+                    scoredNodes.append(nodeA)
+                }
+            } else if nodeB.name == "paperBall" {
+                if !scoredNodes.contains(nodeB) {
+                    ScoreController.shared.reset()
+                    scoredNodes.append(nodeB)
+                }
+            }
+        }
+
+    }
     
     func madeIt(nodeA: SCNNode, nodeB: SCNNode) {
         var inBasket = false
@@ -215,9 +217,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
         startupBinNode?.physicsBody = SCNPhysicsBody(type: .kinematic, shape: SCNPhysicsShape(node: startupBinNode!, options: nil))
         
         
-        startupBinNode?.physicsBody?.categoryBitMask = BitTaskCategory.cylinder.rawValue
-        startupBinNode?.physicsBody?.contactTestBitMask = BitTaskCategory.paper.rawValue
-
+        
         
         
     }

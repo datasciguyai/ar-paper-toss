@@ -13,10 +13,18 @@ import SceneKit
 class HomeScreenViewController: UIViewController {
     
     @IBOutlet weak var playNowButton: UIButton!
-    
     @IBOutlet weak var resetHighScoreButton: UIButton!
     
+    @IBAction func resetScoreButton(_ sender: Any) {
+        resetScore()
+    }
+    
+    
     @IBOutlet weak var highScoreLabel: UILabel!
+    
+    func resetScore() {
+        highScoreLabel.text = "\(ScoreController.shared.reset())"
+    }
     
     func setHighScore() {
         highScoreLabel.text = ScoreController.shared.highScoreString

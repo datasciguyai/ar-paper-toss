@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2555A8A11FB5112F009959FE /* ScoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2555A8A01FB5112F009959FE /* ScoreController.swift */; };
-		2555A8A51FB51D14009959FE /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2555A8A41FB51D14009959FE /* Contact.swift */; };
 		38D3E3D61FB51A34001E7121 /* LaunchScreenCopyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3E3D51FB51A34001E7121 /* LaunchScreenCopyViewController.swift */; };
 		7A7841DA1FB4D1C000841C87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841D91FB4D1BA00841C87 /* ViewController.swift */; };
 		7A7841DC1FB4D1C900841C87 /* ViewController+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841DB1FB4D1C900841C87 /* ViewController+ARSCNViewDelegate.swift */; };
@@ -35,7 +34,6 @@
 
 /* Begin PBXFileReference section */
 		2555A8A01FB5112F009959FE /* ScoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreController.swift; sourceTree = "<group>"; };
-		2555A8A41FB51D14009959FE /* Contact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		38D3E3D51FB51A34001E7121 /* LaunchScreenCopyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenCopyViewController.swift; sourceTree = "<group>"; };
 		3F74FCA51FB0D16B003050A3 /* AR Paper Toss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AR Paper Toss.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A7841D91FB4D1BA00841C87 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,7 +81,6 @@
 		2555A8A31FB51CB7009959FE /* Contact */ = {
 			isa = PBXGroup;
 			children = (
-				2555A8A41FB51D14009959FE /* Contact.swift */,
 				2555A8A01FB5112F009959FE /* ScoreController.swift */,
 			);
 			path = Contact;
@@ -118,7 +115,6 @@
 				7A7841D31FB4D11800841C87 /* Storyboards */,
 				7A7841D41FB4D13000841C87 /* VirtualObjects */,
 				7A7841D51FB4D14400841C87 /* FocusSquare */,
-				7AA38C421FB4DBED00976DEE /* Resources */,
 				7AA38C3A1FB4DB9700976DEE /* AppDelegate.swift */,
 				7AA38C3C1FB4DBA000976DEE /* Info.plist */,
 				7AA38C3E1FB4DBA800976DEE /* Assets.xcassets */,
@@ -174,14 +170,6 @@
 				7A7841F11FB4D44200841C87 /* Utilities.swift */,
 			);
 			path = Utilities;
-			sourceTree = "<group>";
-		};
-		7AA38C421FB4DBED00976DEE /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Resources;
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,7 +247,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2555A8A51FB51D14009959FE /* Contact.swift in Sources */,
 				7A7841DC1FB4D1C900841C87 /* ViewController+ARSCNViewDelegate.swift in Sources */,
 				7A7841DA1FB4D1C000841C87 /* ViewController.swift in Sources */,
 				7A7841F81FB4D48A00841C87 /* VirtualObjectARView.swift in Sources */,
@@ -395,7 +382,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3ZR9ND5B77;
+				DEVELOPMENT_TEAM = W6E3GKZT85;
 				INFOPLIST_FILE = "AR Paper Toss/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JeremyReynolds.AR-Paper-Toss";
@@ -410,7 +397,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 3ZR9ND5B77;
+				DEVELOPMENT_TEAM = W6E3GKZT85;
 				INFOPLIST_FILE = "AR Paper Toss/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JeremyReynolds.AR-Paper-Toss";

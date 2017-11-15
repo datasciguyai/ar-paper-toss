@@ -48,6 +48,9 @@
                                 <state key="normal" title="Reset High Score">
                                     <color key="titleColor" red="0.1525610983" green="0.31394040579999999" blue="0.56867575650000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="resetScoreButton:" destination="wHp-ur-bC1" eventType="touchUpInside" id="kmA-Bv-4yc"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HighScore: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOl-10-hGI">
                                 <rect key="frame" x="0.0" y="120.99999999999999" width="375" height="38.333333333333329"/>
@@ -87,7 +90,7 @@
                     <connections>
                         <outlet property="highScoreLabel" destination="oOl-10-hGI" id="uBy-GV-IAQ"/>
                         <outlet property="playNowButton" destination="r76-1M-4cJ" id="6Xr-Vi-6wD"/>
-                        <outlet property="resetHighScoreButton" destination="bqp-hY-23z" id="GNl-25-hoN"/>
+                        <outlet property="resetHighScoreButton" destination="bqp-hY-23z" id="csb-pB-WJ8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EbM-lq-epm" userLabel="First Responder" sceneMemberID="firstResponder"/>

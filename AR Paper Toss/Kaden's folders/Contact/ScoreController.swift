@@ -12,7 +12,7 @@ class ScoreController {
     static let shared = ScoreController()
     var highScore = 0
     var highScoreString: String {
-    return("\(highScore)")
+        return("HighScore: \(highScore)")
     }
     
     func addScore() -> Int {
@@ -20,8 +20,8 @@ class ScoreController {
         return(highScore)
     }
     
-    func reset() -> Int {
+    func reset() -> String {
         highScore = 0
-        return(highScore)
+        return("HighScore: \(highScore)")
     }
 }
