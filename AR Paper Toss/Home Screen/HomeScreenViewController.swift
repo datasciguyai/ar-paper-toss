@@ -32,6 +32,7 @@ class HomeScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        ScoreController.shared.loadFromPersistence()
         setHighScore()
         playNowButton.layer.cornerRadius = 20
         resetHighScoreButton.layer.cornerRadius = 20

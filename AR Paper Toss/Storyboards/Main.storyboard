@@ -64,6 +64,12 @@
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Score: 0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I06-e6-1bI">
+                                <rect key="frame" x="0.0" y="97" width="375" height="25"/>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="21"/>
+                                <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.15256109833717346" green="0.31394040584564209" blue="0.56867575645446777" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
@@ -72,16 +78,20 @@
                             <constraint firstItem="HAU-y0-gOq" firstAttribute="bottom" secondItem="GY8-D0-SCK" secondAttribute="bottom" constant="20" id="6xA-Fb-Wu7"/>
                             <constraint firstItem="XTE-Ar-wxZ" firstAttribute="top" secondItem="AdH-Nw-Ry2" secondAttribute="top" id="BPf-Pu-rT4"/>
                             <constraint firstItem="uOQ-wG-h1i" firstAttribute="leading" secondItem="HAU-y0-gOq" secondAttribute="leading" constant="20" id="GfY-zp-1fV"/>
+                            <constraint firstItem="I06-e6-1bI" firstAttribute="top" secondItem="jn5-To-3lk" secondAttribute="bottom" constant="8" id="Igt-jY-tLH"/>
                             <constraint firstItem="HAU-y0-gOq" firstAttribute="bottom" secondItem="uOQ-wG-h1i" secondAttribute="bottom" constant="20" id="Jz3-yn-g9I"/>
                             <constraint firstItem="jn5-To-3lk" firstAttribute="top" secondItem="HAU-y0-gOq" secondAttribute="top" constant="20" id="Nqe-En-f5e"/>
+                            <constraint firstItem="I06-e6-1bI" firstAttribute="width" secondItem="XTE-Ar-wxZ" secondAttribute="width" id="oLn-XJ-8mf"/>
                             <constraint firstItem="XTE-Ar-wxZ" firstAttribute="leading" secondItem="HAU-y0-gOq" secondAttribute="leading" id="pjP-ur-jOu"/>
                             <constraint firstItem="jn5-To-3lk" firstAttribute="centerX" secondItem="AdH-Nw-Ry2" secondAttribute="centerX" id="q9f-xr-c7P"/>
+                            <constraint firstItem="I06-e6-1bI" firstAttribute="centerX" secondItem="XTE-Ar-wxZ" secondAttribute="centerX" id="sdT-Ai-109"/>
                             <constraint firstItem="XTE-Ar-wxZ" firstAttribute="bottom" secondItem="HAU-y0-gOq" secondAttribute="bottom" constant="36" id="sfH-ws-KKY"/>
                             <constraint firstItem="HAU-y0-gOq" firstAttribute="trailing" secondItem="GY8-D0-SCK" secondAttribute="trailing" constant="20" id="xPU-Pe-28M"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HAU-y0-gOq"/>
                     </view>
                     <connections>
+                        <outlet property="currentScoreLabel" destination="I06-e6-1bI" id="bCX-NN-EbT"/>
                         <outlet property="instructionsLabel" destination="jn5-To-3lk" id="bGT-Y4-21A"/>
                         <outlet property="sceneView" destination="XTE-Ar-wxZ" id="H5C-M7-7jM"/>
                     </connections>
