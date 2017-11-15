@@ -10,10 +10,10 @@ import UIKit
 import SceneKit
 import ARKit
 
-enum BitTaskCategory: Int {
+enum BitMaskCategory: Int {
     case paper = 3
-    case cylinder = 1
-    case floor = 14
+    case cylinder = 4
+    case tube = 5
     
 }
 
@@ -23,69 +23,45 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
     
     var cylinder: SCNNode?
     var tube: SCNNode?
-    var floor: SCNNode?
     var paperBalls: [SCNNode]?
-    var scoredNodes: [SCNNode] = []
-    
     
     
     func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact) {
         let nodeA = contact.nodeA
-        let nodeB = contact.nodeB
-        missedIt(nodeA: nodeA, nodeB: nodeB)
-        madeIt(nodeA: nodeA, nodeB: nodeB)
+        let NodeB = contact.nodeB
+        missedIt(nodeA: nodeA, nodeB: NodeB)
+        madeIt(nodeA: nodeA, nodeB: NodeB)
+        
     }
     
     func missedIt(nodeA: SCNNode, nodeB: SCNNode) {
-
+        
         var missed = false
-        if nodeA.physicsBody?.categoryBitMask == BitTaskCategory.floor.rawValue {
-            self.floor = nodeA
+        if nodeA.physicsBody?.categoryBitMask == BitMaskCategory.tube.rawValue {
+            self.tube = nodeA
             missed = true
-        } else if nodeB.physicsBody?.categoryBitMask == BitTaskCategory.floor.rawValue{
-            self.floor = nodeB
+        } else if nodeB.physicsBody?.categoryBitMask == BitMaskCategory.tube.rawValue{
+            self.tube = nodeB
             missed = true
         }
         if missed == true {
-            if nodeA.name == "paperBall" {
-                if !scoredNodes.contains(nodeA) {
-                    ScoreController.shared.reset()
-                    scoredNodes.append(nodeA)
-                }
-            } else if nodeB.name == "paperBall" {
-                if !scoredNodes.contains(nodeB) {
-                    ScoreController.shared.reset()
-                    scoredNodes.append(nodeB)
-                }
-            }
+            ScoreController.shared.reset()
         }
-
+        
     }
     
     func madeIt(nodeA: SCNNode, nodeB: SCNNode) {
         var inBasket = false
         
-        if nodeA.physicsBody?.categoryBitMask == BitTaskCategory.cylinder.rawValue {
+        if nodeA.physicsBody?.categoryBitMask == BitMaskCategory.cylinder.rawValue {
             self.cylinder = nodeA
             inBasket = true
-        } else if nodeB.physicsBody?.categoryBitMask == BitTaskCategory.cylinder.rawValue {
+        } else if nodeB.physicsBody?.categoryBitMask == BitMaskCategory.cylinder.rawValue {
             self.cylinder = nodeB
             inBasket = true
         }
         if inBasket == true {
-            if nodeA.name == "paperBall" {
-                if !scoredNodes.contains(nodeA) {
-                    scoredNodes.append(nodeA)
-                    ScoreController.shared.addScore()
-                    print("hit")
-                }
-            } else if nodeB.name == "paperBall" {
-                if !scoredNodes.contains(nodeB) {
-                    scoredNodes.append(nodeB)
-                    ScoreController.shared.addScore()
-                    print("hit")
-                }
-            }
+            ScoreController.shared.addScore()
         }
     }
     
@@ -99,7 +75,6 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
     @IBOutlet var sceneView: VirtualObjectARView!
     @IBOutlet weak var addObjectButton: UIButton!
     @IBOutlet weak var instructionsLabel: UILabel!
-    @IBOutlet weak var currentScoreLabel: UILabel!
     
     var session: ARSession {
         return sceneView.session
@@ -120,10 +95,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
         
         sceneView.delegate = self
         setupCamera()
-        let configuration = ARWorldTrackingConfiguration()
-
         sceneView.scene.rootNode.addChildNode(focusSquare)
-        self.sceneView.session.run(configuration)
         self.sceneView.scene.physicsWorld.contactDelegate = self
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGestureRecognizer(sender:)))
         sceneView.addGestureRecognizer(panGestureRecognizer)
@@ -137,7 +109,8 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let configuration = ARWorldTrackingConfiguration()
-        self.sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, .showPhysicsShapes]
+//        sceneView.debugOptions = .showPhysicsShapes
+        self.sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
         sceneView.session.run(configuration)
     }
     
@@ -149,10 +122,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
     @objc func handlePanGestureRecognizer(sender: UIPanGestureRecognizer) {
         switch sender.state {
         case .ended:
-            
             guard let arScene = sender.view as? ARSCNView, let pointOfView = arScene.pointOfView, let paperScene = SCNScene(named: "Models.scnassets/Paper Ball/Paper-Ball.scn"), let ballNode = (paperScene.rootNode.childNode(withName: "paperBall", recursively: false)) else { return }
-            
-            
             let transform = pointOfView.transform
             let orientation = SCNVector3(-transform.m31, -transform.m32, -transform.m33)
             let location = SCNVector3(transform.m41, transform.m42 - 0.2, transform.m43)
@@ -160,12 +130,12 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
             ballNode.position = location
             let velocityX = abs(sender.velocity(in: arScene).x) / CGFloat(300)
             let velocity = abs(sender.velocity(in: arScene).y) / CGFloat(300)
-            ballNode.name = "paperBall"
+            
             ballNode.physicsBody = SCNPhysicsBody(type: .dynamic, shape: SCNPhysicsShape(node: ballNode, options: [SCNPhysicsShape.Option.scale:ballNode.scale]))
             ballNode.physicsBody?.friction = 0.75
 
-            ballNode.physicsBody?.categoryBitMask = BitTaskCategory.paper.rawValue
-            ballNode.physicsBody?.contactTestBitMask = BitTaskCategory.cylinder.rawValue
+            ballNode.physicsBody?.categoryBitMask = BitMaskCategory.paper.rawValue
+            ballNode.physicsBody?.contactTestBitMask = BitMaskCategory.cylinder.rawValue
             
             ballNode.physicsBody?.applyForce(SCNVector3(orientation.x * Float(velocity), orientation.y * Float(-velocity), orientation.z * Float(velocity)), asImpulse: true)
             arScene.scene.rootNode.addChildNode(ballNode)
@@ -174,7 +144,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
             }
             paperBalls?.append(ballNode)
             if let paperBalls = paperBalls {
-                if paperBalls.count > 500 {
+                if paperBalls.count > 5 {
                     paperBalls.first?.removeFromParentNode()
                     self.paperBalls?.removeFirst()
                 }
@@ -211,14 +181,33 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
         
         // Add Code to create initial bin in viewDidLoad
 
-        let startupBin = SCNScene(named: "Models.scnassets/Classic-Bin.scn")
-        let startupBinNode = startupBin?.rootNode.childNode(withName: "MACOSX_paper_bin_fixed", recursively: false)
+        let startupBin = SCNScene(named: "Models.scnassets/Test-Bin.scn")
+        let startupBinNode = startupBin?.rootNode.childNode(withName: "bin", recursively: false)
         startupBinNode?.position = SCNVector3(0,0,-3)
         self.sceneView.scene.rootNode.addChildNode(startupBinNode!)
-        startupBinNode?.physicsBody = SCNPhysicsBody(type: .kinematic, shape: SCNPhysicsShape(node: startupBinNode!, options: nil))
+        
+<<<<<<< HEAD
+        startupBinNode?.physicsBody?.categoryBitMask = BitTaskCategory.cylinder.rawValue
+        startupBinNode?.physicsBody?.contactTestBitMask = BitTaskCategory.paper.rawValue
         
         
+        // Add code to create a floating AR Score over the trashcan
+        let text = SCNText(string: "131", extrusionDepth: 3)
+        let material = SCNMaterial()
+        material.diffuse.contents = UIColor.blue
+        text.materials = [material]
+        let textNode = SCNNode()
+        textNode.geometry = text
+  
         
+        startupBinNode?.addChildNode(textNode)
+        
+        textNode.position = SCNVector3(0,0.1,0)
+=======
+        startupBinNode?.physicsBody?.categoryBitMask = BitMaskCategory.cylinder.rawValue
+        startupBinNode?.physicsBody?.contactTestBitMask = BitMaskCategory.paper.rawValue
+>>>>>>> develop
+
         
         
     }
@@ -244,11 +233,9 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
         if isObjectVisible {
             focusSquare.hide()
             instructionsLabel.text = ""
-            currentScoreLabel.isHidden = false
         } else {
             focusSquare.unhide()
             instructionsLabel.text = "Move camera around to detect floor and then push +/- to add a bin"
-            currentScoreLabel.isHidden = true
         }
         
         // We should always have a valid world position unless the sceen is just being initialized.
