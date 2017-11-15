@@ -94,6 +94,7 @@
                         <outlet property="currentScoreLabel" destination="I06-e6-1bI" id="bCX-NN-EbT"/>
                         <outlet property="instructionsLabel" destination="jn5-To-3lk" id="bGT-Y4-21A"/>
                         <outlet property="sceneView" destination="XTE-Ar-wxZ" id="H5C-M7-7jM"/>
+                        <outlet property="scoreLabel" destination="I06-e6-1bI" id="LkY-hb-6Br"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2TV-1V-bUW" userLabel="First Responder" sceneMemberID="firstResponder"/>

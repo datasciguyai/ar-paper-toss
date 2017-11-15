@@ -19,6 +19,8 @@ enum BitMaskCategory: Int {
 
 class ViewController: UIViewController, SCNPhysicsContactDelegate {
     
+    @IBOutlet weak var scoreLabel: UILabel!
+    
     //kaden added begins
     
     var cylinder: SCNNode?
@@ -50,11 +52,21 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
                 if !scoredNodes.contains(nodeA) {
                     ScoreController.shared.missed()
                     scoredNodes.append(nodeA)
+                    print("miss")
+                    DispatchQueue.main.async {
+                        self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore)"
+                        self.reloadInputViews()
+                    }
                 }
             } else if nodeB.name == "paperBall" {
                 if !scoredNodes.contains(nodeB) {
                     ScoreController.shared.missed()
                     scoredNodes.append(nodeB)
+                    print("miss")
+                    DispatchQueue.main.async {
+                        self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore)"
+                        self.reloadInputViews()
+                    }
                 }
             }
         }
@@ -76,11 +88,19 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
                 if !scoredNodes.contains(nodeA) {
                     scoredNodes.append(nodeA)
                     ScoreController.shared.addScore()
+                    DispatchQueue.main.async {
+                        self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore)"
+                        self.reloadInputViews()
+                    }
                 }
             } else if nodeB.name == "paperBall" {
                 if !scoredNodes.contains(nodeB) {
                     scoredNodes.append(nodeB)
                     ScoreController.shared.addScore()
+                    DispatchQueue.main.async {
+                        self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore)"
+                        self.reloadInputViews()
+                    }
                 }
             }
         }
@@ -210,6 +230,8 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
     }
 
     // MARK: - Focus Square
+    
+    
     
     func updateFocusSquare() {
         

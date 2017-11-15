@@ -39,6 +39,7 @@ extension ViewController: VirtualObjectSelectionViewControllerDelegate {
             DispatchQueue.main.async {
                 self.placeVirtualObject(loadedObject)
                 self.paperBinPlaced = true
+                ScoreController.shared.missed()
             }
         })
     }

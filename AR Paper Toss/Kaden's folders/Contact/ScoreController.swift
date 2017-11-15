@@ -8,9 +8,12 @@
 
 import Foundation
 
+
 class ScoreController {
     private let highScoreKey = "highScore"
     static let shared = ScoreController()
+    
+    var currentScore = 0
     
     var highScore: Score = {
         return Score(score: 0)
@@ -25,7 +28,10 @@ class ScoreController {
     }
     
     func addScore() -> Int {
-        highScore.score += 1
+        currentScore += 1
+        if highScore.score < currentScore {
+            highScore.score = currentScore
+        }
         saveToPersistence()
         return(highScore.score)
     }
