@@ -213,7 +213,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
         
         // Add Code to create initial bin in viewDidLoad
 
-        let startupBin = SCNScene(named: "Models.scnassets/Classic-Bin.scn")
+        let startupBin = SCNScene(named: "Models.scnassets/Classic Bin.scn")
         let startupBinNode = startupBin?.rootNode.childNode(withName: "MACOSX_paper_bin_fixed", recursively: false)
         startupBinNode?.position = SCNVector3(0,0,-3)
         self.sceneView.scene.rootNode.addChildNode(startupBinNode!)
