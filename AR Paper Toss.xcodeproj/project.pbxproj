@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2555A8A11FB5112F009959FE /* ScoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2555A8A01FB5112F009959FE /* ScoreController.swift */; };
+		383592621FBCB5A900680A0A /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383592611FBCB5A900680A0A /* Score.swift */; };
 		38D3E3D61FB51A34001E7121 /* LaunchScreenCopyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3E3D51FB51A34001E7121 /* LaunchScreenCopyViewController.swift */; };
 		7A7841DA1FB4D1C000841C87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841D91FB4D1BA00841C87 /* ViewController.swift */; };
 		7A7841DC1FB4D1C900841C87 /* ViewController+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841DB1FB4D1C900841C87 /* ViewController+ARSCNViewDelegate.swift */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		2555A8A01FB5112F009959FE /* ScoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreController.swift; sourceTree = "<group>"; };
+		383592611FBCB5A900680A0A /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		38D3E3D51FB51A34001E7121 /* LaunchScreenCopyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenCopyViewController.swift; sourceTree = "<group>"; };
 		3F74FCA51FB0D16B003050A3 /* AR Paper Toss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AR Paper Toss.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A7841D91FB4D1BA00841C87 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 		2555A8A31FB51CB7009959FE /* Contact */ = {
 			isa = PBXGroup;
 			children = (
+				383592611FBCB5A900680A0A /* Score.swift */,
 				2555A8A01FB5112F009959FE /* ScoreController.swift */,
 			);
 			path = Contact;
@@ -263,6 +266,7 @@
 				7A7841E21FB4D1E900841C87 /* ThresholdPanGesture.swift in Sources */,
 				7A7841F21FB4D44300841C87 /* Utilities.swift in Sources */,
 				7A7841E61FB4D23200841C87 /* HomeScreenViewController.swift in Sources */,
+				383592621FBCB5A900680A0A /* Score.swift in Sources */,
 				7A7841F41FB4D46700841C87 /* VirtualObjects.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
