@@ -106,8 +106,6 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
         }
     }
     
-    //Kaden added ends
-    
     // Actions
     @IBOutlet var sceneView: VirtualObjectARView!
     @IBOutlet weak var addObjectButton: UIButton!
@@ -186,16 +184,6 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
         }
     }
     
-    func centerPivot(for node: SCNNode) {
-        let min = node.boundingBox.min
-        let max = node.boundingBox.max
-        node.pivot = SCNMatrix4MakeTranslation(
-        min.x + (max.x - min.x)/2,
-        min.y + (max.y - min.y)/2,
-        min.z + (max.z - min.z)/2
-        )
-    }
-    
     func setupCamera() {
         guard let camera = sceneView.pointOfView?.camera else {
             fatalError("Expected a valid `pointOfView` from the scene.")
@@ -208,18 +196,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
         camera.minimumExposure = -1
         camera.maximumExposure = 3
     }
-    
-    func startupBin() {
-        
-        // Add Code to create initial bin in viewDidLoad
 
-        let startupBin = SCNScene(named: "Models.scnassets/Classic-Bin.scn")
-        let startupBinNode = startupBin?.rootNode.childNode(withName: "MACOSX_paper_bin_fixed", recursively: false)
-        startupBinNode?.position = SCNVector3(0,0,-3)
-        self.sceneView.scene.rootNode.addChildNode(startupBinNode!)
-        startupBinNode?.physicsBody = SCNPhysicsBody(type: .kinematic, shape: SCNPhysicsShape(node: startupBinNode!, options: nil))
-    }
-    
     // MARK: - Session management
     
     /// Creates a new AR configuration to run on the `session`.
@@ -230,9 +207,6 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
     }
 
     // MARK: - Focus Square
-    
-    
-    
     func updateFocusSquare() {
         
         let isObjectVisible = virtualObjectLoader.loadedObjects.contains { object in

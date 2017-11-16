@@ -130,7 +130,6 @@
 		7A7841D21FB4D10500841C87 /* Home Screen */ = {
 			isa = PBXGroup;
 			children = (
-				7A7841E31FB4D1F800841C87 /* HomeScreen.storyboard */,
 				38D3E3D51FB51A34001E7121 /* LaunchScreenCopyViewController.swift */,
 				7A7841E51FB4D23100841C87 /* HomeScreenViewController.swift */,
 			);
@@ -140,8 +139,9 @@
 		7A7841D31FB4D11800841C87 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				7A7841E71FB4D23B00841C87 /* Main.storyboard */,
 				7A7841E91FB4D24200841C87 /* LaunchScreen.storyboard */,
+				7A7841E31FB4D1F800841C87 /* HomeScreen.storyboard */,
+				7A7841E71FB4D23B00841C87 /* Main.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";

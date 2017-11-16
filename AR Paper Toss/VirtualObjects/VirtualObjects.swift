@@ -22,7 +22,7 @@ class VirtualObject: SCNReferenceNode {
     /// Use average of recent virtual object distances to avoid rapid changes in object scale.
     private var recentVirtualObjectDistances = [Float]()
     
-    /// Resets the objects poisition smoothing.
+    /// Resets the objects position smoothing.
     func reset() {
         recentVirtualObjectDistances.removeAll()
     }
