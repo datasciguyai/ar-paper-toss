@@ -28,7 +28,6 @@
 		7A7841FA1FB4D4AC00841C87 /* VirtualObjectInteraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841F91FB4D4AA00841C87 /* VirtualObjectInteraction.swift */; };
 		7A7841FC1FB4D4C500841C87 /* VirtualObjectSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841FB1FB4D4C400841C87 /* VirtualObjectSelection.swift */; };
 		7AA38C3B1FB4DB9700976DEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA38C3A1FB4DB9700976DEE /* AppDelegate.swift */; };
-		7AA38C3D1FB4DBA000976DEE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7AA38C3C1FB4DBA000976DEE /* Info.plist */; };
 		7AA38C3F1FB4DBA800976DEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AA38C3E1FB4DBA800976DEE /* Assets.xcassets */; };
 		7AA38C411FB4DBB900976DEE /* Models.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 7AA38C401FB4DBB900976DEE /* Models.scnassets */; };
 /* End PBXBuildFile section */
@@ -75,6 +74,8 @@
 		383592631FBE08B400680A0A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				7A7841D51FB4D14400841C87 /* FocusSquare */,
+				7AA38C401FB4DBB900976DEE /* Models.scnassets */,
 				383592611FBCB5A900680A0A /* Score.swift */,
 			);
 			path = Models;
@@ -83,6 +84,7 @@
 		383592641FBE08C400680A0A /* Model Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				7A7841D41FB4D13000841C87 /* VirtualObjects */,
 				2555A8A01FB5112F009959FE /* ScoreController.swift */,
 			);
 			path = "Model Controllers";
@@ -105,6 +107,7 @@
 		383592661FBE094900680A0A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7A7841D71FB4D16500841C87 /* Utilities */,
 				7AA38C3E1FB4DBA800976DEE /* Assets.xcassets */,
 				7AA38C3A1FB4DB9700976DEE /* AppDelegate.swift */,
 			);
@@ -130,16 +133,12 @@
 		3F74FCA71FB0D16B003050A3 /* AR Paper Toss */ = {
 			isa = PBXGroup;
 			children = (
-				383592661FBE094900680A0A /* Resources */,
-				383592651FBE08D000680A0A /* ViewControllers */,
-				383592641FBE08C400680A0A /* Model Controllers */,
 				383592631FBE08B400680A0A /* Models */,
+				383592641FBE08C400680A0A /* Model Controllers */,
+				383592651FBE08D000680A0A /* ViewControllers */,
 				7A7841D31FB4D11800841C87 /* Storyboards */,
-				7A7841D41FB4D13000841C87 /* VirtualObjects */,
-				7A7841D51FB4D14400841C87 /* FocusSquare */,
+				383592661FBE094900680A0A /* Resources */,
 				7AA38C3C1FB4DBA000976DEE /* Info.plist */,
-				7AA38C401FB4DBB900976DEE /* Models.scnassets */,
-				7A7841D71FB4D16500841C87 /* Utilities */,
 			);
 			path = "AR Paper Toss";
 			sourceTree = "<group>";
@@ -245,7 +244,6 @@
 				7A7841E81FB4D23B00841C87 /* Main.storyboard in Resources */,
 				7AA38C411FB4DBB900976DEE /* Models.scnassets in Resources */,
 				7A7841E41FB4D1F900841C87 /* HomeScreen.storyboard in Resources */,
-				7AA38C3D1FB4DBA000976DEE /* Info.plist in Resources */,
 				7A7841EA1FB4D24300841C87 /* LaunchScreen.storyboard in Resources */,
 				7AA38C3F1FB4DBA800976DEE /* Assets.xcassets in Resources */,
 			);
