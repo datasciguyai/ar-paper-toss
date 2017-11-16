@@ -20,7 +20,7 @@ class ScoreController {
     }()
     
     var highScoreString: String {
-        return("HighScore: \(highScore.score)")
+        return("High Score: \(highScore.score)")
     }
     
     init() {
@@ -43,7 +43,7 @@ class ScoreController {
     func reset() -> String {
         highScore.score = 0
         saveToPersistence()
-        return("HighScore: 0")
+        return("High Score: 0")
     }
     
     func saveToPersistence() {

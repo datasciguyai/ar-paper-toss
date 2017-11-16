@@ -395,10 +395,10 @@
 				DEVELOPMENT_TEAM = 5A3323C976;
 				INFOPLIST_FILE = "AR Paper Toss/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.JeremyReynolds.AR-Paper-Toss";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JJKS.AR-Paper-Toss";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -410,10 +410,10 @@
 				DEVELOPMENT_TEAM = 5A3323C976;
 				INFOPLIST_FILE = "AR Paper Toss/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.JeremyReynolds.AR-Paper-Toss";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.JJKS.AR-Paper-Toss";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
