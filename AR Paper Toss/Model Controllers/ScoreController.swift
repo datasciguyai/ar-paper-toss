@@ -27,19 +27,17 @@ class ScoreController {
         loadFromPersistence()
     }
     
-    func addScore() -> Int {
+    func addScore() {
         currentScore += 1
         if highScore.score < currentScore {
             highScore.score = currentScore
         }
         saveToPersistence()
-        return(highScore.score)
     }
     
-    func missed() -> Int {
+    func missed() {
         currentScore = 0
         print("\(currentScore)")
-        return(currentScore)
     }
     
     func reset() -> String {
