@@ -9,19 +9,19 @@
 /* Begin PBXBuildFile section */
 		2555A8A11FB5112F009959FE /* ScoreController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2555A8A01FB5112F009959FE /* ScoreController.swift */; };
 		383592621FBCB5A900680A0A /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383592611FBCB5A900680A0A /* Score.swift */; };
-		38D3E3D61FB51A34001E7121 /* LaunchScreenCopyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D3E3D51FB51A34001E7121 /* LaunchScreenCopyViewController.swift */; };
-		7A7841DA1FB4D1C000841C87 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841D91FB4D1BA00841C87 /* ViewController.swift */; };
-		7A7841DC1FB4D1C900841C87 /* ViewController+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841DB1FB4D1C900841C87 /* ViewController+ARSCNViewDelegate.swift */; };
-		7A7841DE1FB4D1D400841C87 /* ViewControllerObjectSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841DD1FB4D1D400841C87 /* ViewControllerObjectSelection.swift */; };
-		7A7841E01FB4D1E100841C87 /* ViewControllerActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841DF1FB4D1E000841C87 /* ViewControllerActions.swift */; };
-		7A7841E21FB4D1E900841C87 /* ThresholdPanGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841E11FB4D1E900841C87 /* ThresholdPanGesture.swift */; };
+		7A6904A81FBE2E4B008359EB /* ViewControllerActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6904A11FBE2E4A008359EB /* ViewControllerActions.swift */; };
+		7A6904A91FBE2E4B008359EB /* LaunchScreenCopyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6904A21FBE2E4A008359EB /* LaunchScreenCopyViewController.swift */; };
+		7A6904AA1FBE2E4B008359EB /* ViewControllerObjectSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6904A31FBE2E4B008359EB /* ViewControllerObjectSelection.swift */; };
+		7A6904AB1FBE2E4B008359EB /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6904A41FBE2E4B008359EB /* HomeScreenViewController.swift */; };
+		7A6904AC1FBE2E4B008359EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6904A51FBE2E4B008359EB /* ViewController.swift */; };
+		7A6904AD1FBE2E4B008359EB /* ViewController+ARSCNViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6904A61FBE2E4B008359EB /* ViewController+ARSCNViewDelegate.swift */; };
+		7A6904AE1FBE2E4B008359EB /* ThresholdPanGesture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6904A71FBE2E4B008359EB /* ThresholdPanGesture.swift */; };
+		7A6904B01FBE30A1008359EB /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A6904AF1FBE30A1008359EB /* Utilities.swift */; };
 		7A7841E41FB4D1F900841C87 /* HomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A7841E31FB4D1F800841C87 /* HomeScreen.storyboard */; };
-		7A7841E61FB4D23200841C87 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841E51FB4D23100841C87 /* HomeScreenViewController.swift */; };
 		7A7841E81FB4D23B00841C87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A7841E71FB4D23B00841C87 /* Main.storyboard */; };
 		7A7841EA1FB4D24300841C87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A7841E91FB4D24200841C87 /* LaunchScreen.storyboard */; };
 		7A7841EC1FB4D2AA00841C87 /* FocusSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841EB1FB4D2AA00841C87 /* FocusSquare.swift */; };
 		7A7841EE1FB4D32200841C87 /* FocusSquareSegment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841ED1FB4D31F00841C87 /* FocusSquareSegment.swift */; };
-		7A7841F21FB4D44300841C87 /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841F11FB4D44200841C87 /* Utilities.swift */; };
 		7A7841F41FB4D46700841C87 /* VirtualObjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841F31FB4D46300841C87 /* VirtualObjects.swift */; };
 		7A7841F61FB4D47B00841C87 /* VirtualObjectLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841F51FB4D47B00841C87 /* VirtualObjectLoader.swift */; };
 		7A7841F81FB4D48A00841C87 /* VirtualObjectARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7841F71FB4D48900841C87 /* VirtualObjectARView.swift */; };
@@ -35,20 +35,20 @@
 /* Begin PBXFileReference section */
 		2555A8A01FB5112F009959FE /* ScoreController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreController.swift; sourceTree = "<group>"; };
 		383592611FBCB5A900680A0A /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
-		38D3E3D51FB51A34001E7121 /* LaunchScreenCopyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreenCopyViewController.swift; sourceTree = "<group>"; };
 		3F74FCA51FB0D16B003050A3 /* AR Paper Toss.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AR Paper Toss.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7A7841D91FB4D1BA00841C87 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7A7841DB1FB4D1C900841C87 /* ViewController+ARSCNViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+ARSCNViewDelegate.swift"; sourceTree = "<group>"; };
-		7A7841DD1FB4D1D400841C87 /* ViewControllerObjectSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerObjectSelection.swift; sourceTree = "<group>"; };
-		7A7841DF1FB4D1E000841C87 /* ViewControllerActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerActions.swift; sourceTree = "<group>"; };
-		7A7841E11FB4D1E900841C87 /* ThresholdPanGesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThresholdPanGesture.swift; sourceTree = "<group>"; };
+		7A6904A11FBE2E4A008359EB /* ViewControllerActions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerActions.swift; sourceTree = "<group>"; };
+		7A6904A21FBE2E4A008359EB /* LaunchScreenCopyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchScreenCopyViewController.swift; sourceTree = "<group>"; };
+		7A6904A31FBE2E4B008359EB /* ViewControllerObjectSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerObjectSelection.swift; sourceTree = "<group>"; };
+		7A6904A41FBE2E4B008359EB /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		7A6904A51FBE2E4B008359EB /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7A6904A61FBE2E4B008359EB /* ViewController+ARSCNViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+ARSCNViewDelegate.swift"; sourceTree = "<group>"; };
+		7A6904A71FBE2E4B008359EB /* ThresholdPanGesture.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThresholdPanGesture.swift; sourceTree = "<group>"; };
+		7A6904AF1FBE30A1008359EB /* Utilities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		7A7841E31FB4D1F800841C87 /* HomeScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = HomeScreen.storyboard; sourceTree = "<group>"; };
-		7A7841E51FB4D23100841C87 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		7A7841E71FB4D23B00841C87 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		7A7841E91FB4D24200841C87 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A7841EB1FB4D2AA00841C87 /* FocusSquare.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusSquare.swift; sourceTree = "<group>"; };
 		7A7841ED1FB4D31F00841C87 /* FocusSquareSegment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FocusSquareSegment.swift; sourceTree = "<group>"; };
-		7A7841F11FB4D44200841C87 /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		7A7841F31FB4D46300841C87 /* VirtualObjects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObjects.swift; sourceTree = "<group>"; };
 		7A7841F51FB4D47B00841C87 /* VirtualObjectLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObjectLoader.swift; sourceTree = "<group>"; };
 		7A7841F71FB4D48900841C87 /* VirtualObjectARView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualObjectARView.swift; sourceTree = "<group>"; };
@@ -93,13 +93,13 @@
 		383592651FBE08D000680A0A /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				38D3E3D51FB51A34001E7121 /* LaunchScreenCopyViewController.swift */,
-				7A7841E51FB4D23100841C87 /* HomeScreenViewController.swift */,
-				7A7841D91FB4D1BA00841C87 /* ViewController.swift */,
-				7A7841DB1FB4D1C900841C87 /* ViewController+ARSCNViewDelegate.swift */,
-				7A7841DD1FB4D1D400841C87 /* ViewControllerObjectSelection.swift */,
-				7A7841DF1FB4D1E000841C87 /* ViewControllerActions.swift */,
-				7A7841E11FB4D1E900841C87 /* ThresholdPanGesture.swift */,
+				7A6904A41FBE2E4B008359EB /* HomeScreenViewController.swift */,
+				7A6904A21FBE2E4A008359EB /* LaunchScreenCopyViewController.swift */,
+				7A6904A71FBE2E4B008359EB /* ThresholdPanGesture.swift */,
+				7A6904A51FBE2E4B008359EB /* ViewController.swift */,
+				7A6904A61FBE2E4B008359EB /* ViewController+ARSCNViewDelegate.swift */,
+				7A6904A11FBE2E4A008359EB /* ViewControllerActions.swift */,
+				7A6904A31FBE2E4B008359EB /* ViewControllerObjectSelection.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -177,7 +177,7 @@
 		7A7841D71FB4D16500841C87 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				7A7841F11FB4D44200841C87 /* Utilities.swift */,
+				7A6904AF1FBE30A1008359EB /* Utilities.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -256,23 +256,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A7841DC1FB4D1C900841C87 /* ViewController+ARSCNViewDelegate.swift in Sources */,
-				7A7841DA1FB4D1C000841C87 /* ViewController.swift in Sources */,
+				7A6904AD1FBE2E4B008359EB /* ViewController+ARSCNViewDelegate.swift in Sources */,
+				7A6904AE1FBE2E4B008359EB /* ThresholdPanGesture.swift in Sources */,
 				7A7841F81FB4D48A00841C87 /* VirtualObjectARView.swift in Sources */,
-				7A7841DE1FB4D1D400841C87 /* ViewControllerObjectSelection.swift in Sources */,
-				38D3E3D61FB51A34001E7121 /* LaunchScreenCopyViewController.swift in Sources */,
-				7A7841E01FB4D1E100841C87 /* ViewControllerActions.swift in Sources */,
+				7A6904AB1FBE2E4B008359EB /* HomeScreenViewController.swift in Sources */,
+				7A6904AC1FBE2E4B008359EB /* ViewController.swift in Sources */,
 				7A7841EE1FB4D32200841C87 /* FocusSquareSegment.swift in Sources */,
 				7A7841F61FB4D47B00841C87 /* VirtualObjectLoader.swift in Sources */,
+				7A6904A91FBE2E4B008359EB /* LaunchScreenCopyViewController.swift in Sources */,
 				7A7841FA1FB4D4AC00841C87 /* VirtualObjectInteraction.swift in Sources */,
 				7AA38C3B1FB4DB9700976DEE /* AppDelegate.swift in Sources */,
+				7A6904A81FBE2E4B008359EB /* ViewControllerActions.swift in Sources */,
 				2555A8A11FB5112F009959FE /* ScoreController.swift in Sources */,
 				7A7841EC1FB4D2AA00841C87 /* FocusSquare.swift in Sources */,
+				7A6904B01FBE30A1008359EB /* Utilities.swift in Sources */,
 				7A7841FC1FB4D4C500841C87 /* VirtualObjectSelection.swift in Sources */,
-				7A7841E21FB4D1E900841C87 /* ThresholdPanGesture.swift in Sources */,
-				7A7841F21FB4D44300841C87 /* Utilities.swift in Sources */,
-				7A7841E61FB4D23200841C87 /* HomeScreenViewController.swift in Sources */,
 				383592621FBCB5A900680A0A /* Score.swift in Sources */,
+				7A6904AA1FBE2E4B008359EB /* ViewControllerObjectSelection.swift in Sources */,
 				7A7841F41FB4D46700841C87 /* VirtualObjects.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -392,7 +392,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5A3323C976;
+				DEVELOPMENT_TEAM = 3ZR9ND5B77;
 				INFOPLIST_FILE = "AR Paper Toss/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JJKS.AR-Paper-Toss";
@@ -407,7 +407,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 5A3323C976;
+				DEVELOPMENT_TEAM = 3ZR9ND5B77;
 				INFOPLIST_FILE = "AR Paper Toss/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.JJKS.AR-Paper-Toss";
