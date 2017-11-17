@@ -157,7 +157,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let configuration = ARWorldTrackingConfiguration()
-        self.sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
+//        self.sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
 //        sceneView.autoenablesDefaultLighting = true
         sceneView.session.run(configuration)
     }

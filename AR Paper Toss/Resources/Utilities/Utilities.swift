@@ -1,4 +1,3 @@
-
 //  Utilities.swift
 //  PaperTossARDay1
 //
@@ -36,4 +35,3 @@ extension CGPoint {
         return sqrt(x * x + y * y)
     }
 }
-
