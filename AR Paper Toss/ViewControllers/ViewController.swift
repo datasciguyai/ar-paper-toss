@@ -90,7 +90,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
                     ScoreController.shared.addScore()
                     DispatchQueue.main.async {
                         if ScoreController.shared.currentScore >= ScoreController.shared.highScore.score {
-                            self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore) \(self.newHighScore)"
+                            self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore) 🏅"
                         } else {
                             self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore)"
                         }
@@ -102,8 +102,8 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
                     scoredNodes.append(nodeB)
                     ScoreController.shared.addScore()
                     DispatchQueue.main.async {
-                        if ScoreController.shared.currentScore > ScoreController.shared.highScore.score {
-                            self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore) 💩"
+                        if ScoreController.shared.currentScore >= ScoreController.shared.highScore.score {
+                            self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore) 🏅"
                         } else {
                         self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore)"
                         }
