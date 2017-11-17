@@ -29,7 +29,8 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
     var paperBalls: [SCNNode] = []
     var scoredNodes: [SCNNode] = []
     var paperBinPlaced = false
-    
+    var newHighScore = #imageLiteral(resourceName: "New High Score")
+
     func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact) {
         let nodeA = contact.nodeA
         let nodeB = contact.nodeB
@@ -38,7 +39,6 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
     }
     
     func missedIt(nodeA: SCNNode, nodeB: SCNNode) {
-
         var missed = false
         if nodeA.physicsBody?.categoryBitMask == BitMaskCategory.floor.rawValue {
             self.floor = nodeA
@@ -89,7 +89,11 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
                     scoredNodes.append(nodeA)
                     ScoreController.shared.addScore()
                     DispatchQueue.main.async {
-                        self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore)"
+                        if ScoreController.shared.currentScore >= ScoreController.shared.highScore.score {
+                            self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore) \(self.newHighScore)"
+                        } else {
+                            self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore)"
+                        }
                         self.reloadInputViews()
                     }
                 }
@@ -98,7 +102,11 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
                     scoredNodes.append(nodeB)
                     ScoreController.shared.addScore()
                     DispatchQueue.main.async {
+                        if ScoreController.shared.currentScore > ScoreController.shared.highScore.score {
+                            self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore) 💩"
+                        } else {
                         self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore)"
+                        }
                         self.reloadInputViews()
                     }
                 }
@@ -111,6 +119,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
     @IBOutlet weak var addObjectButton: UIButton!
     @IBOutlet weak var instructionsLabel: UILabel!
     @IBOutlet weak var currentScoreLabel: UILabel!
+    @IBOutlet weak var moveBinUILabel: UILabel!
     
     var session: ARSession {
         return sceneView.session
@@ -159,6 +168,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
     }
     
     @objc func handlePanGestureRecognizer(sender: UIPanGestureRecognizer) {
+        moveBinUILabel.isHidden = true
         switch sender.state {
         case .ended:
             
@@ -221,6 +231,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
             focusSquare.unhide()
             instructionsLabel.text = "Move camera around to detect floor and then push +/- to add a bin"
             currentScoreLabel.isHidden = true
+            moveBinUILabel.isHidden = true
         }
         
         // We should always have a valid world position unless the sceen is just being initialized.
