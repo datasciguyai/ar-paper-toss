@@ -73,7 +73,10 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
 
     }
     
+    let impact = UIImpactFeedbackGenerator()
+    
     func madeIt(nodeA: SCNNode, nodeB: SCNNode) {
+        
         var inBasket = false
         
         if nodeA.physicsBody?.categoryBitMask == BitMaskCategory.cylinder.rawValue {
@@ -89,6 +92,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
                     scoredNodes.append(nodeA)
                     ScoreController.shared.addScore()
                     DispatchQueue.main.async {
+                        self.impact.impactOccurred()
                         if ScoreController.shared.currentScore >= ScoreController.shared.highScore.score {
                             self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore) 🏅"
                         } else {
@@ -102,6 +106,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
                     scoredNodes.append(nodeB)
                     ScoreController.shared.addScore()
                     DispatchQueue.main.async {
+                        self.impact.impactOccurred()
                         if ScoreController.shared.currentScore >= ScoreController.shared.highScore.score {
                             self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore) 🏅"
                         } else {
