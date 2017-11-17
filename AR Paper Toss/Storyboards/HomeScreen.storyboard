@@ -31,7 +31,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r76-1M-4cJ">
-                                <rect key="frame" x="23.333333333333343" y="489.99999999999994" width="328.33333333333326" height="135.33333333333331"/>
+                                <rect key="frame" x="23.333333333333343" y="481.99999999999994" width="328.33333333333326" height="135.33333333333331"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="35"/>
                                 <state key="normal" title="Play Now">
@@ -42,7 +42,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqp-hY-23z">
-                                <rect key="frame" x="23.333333333333343" y="634.66666666666663" width="328.33333333333326" height="135.33333333333337"/>
+                                <rect key="frame" x="23.333333333333343" y="626.66666666666663" width="328.33333333333326" height="135.33333333333337"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="35"/>
                                 <state key="normal" title="Reset High Score">
@@ -53,13 +53,13 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOl-10-hGI">
-                                <rect key="frame" x="0.0" y="120.99999999999999" width="375" height="38.333333333333329"/>
+                                <rect key="frame" x="0.0" y="120.99999999999999" width="375" height="30.333333333333329"/>
                                 <fontDescription key="fontDescription" name="AmericanTypewriter" family="American Typewriter" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Paper Ball" translatesAutoresizingMaskIntoConstraints="NO" id="CjC-sB-CKm">
-                                <rect key="frame" x="47" y="189.33333333333334" width="281" height="270.66666666666663"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="papertobin" translatesAutoresizingMaskIntoConstraints="NO" id="CjC-sB-CKm">
+                                <rect key="frame" x="23.333333333333343" y="181.33333333333334" width="328.33333333333326" height="270.66666666666663"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.07997605949640274" green="0.31948548555374146" blue="0.58760559558868408" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -71,8 +71,8 @@
                             <constraint firstItem="bqp-hY-23z" firstAttribute="top" secondItem="r76-1M-4cJ" secondAttribute="bottom" constant="8.6666666666666288" id="DD0-eE-0iO"/>
                             <constraint firstItem="r76-1M-4cJ" firstAttribute="top" secondItem="CjC-sB-CKm" secondAttribute="bottom" constant="30" id="GuQ-v4-2SZ"/>
                             <constraint firstItem="erK-vr-uEr" firstAttribute="top" secondItem="VbX-MY-IRM" secondAttribute="top" constant="20" id="IRX-Sv-Ebn"/>
-                            <constraint firstItem="VbX-MY-IRM" firstAttribute="bottom" secondItem="bqp-hY-23z" secondAttribute="bottom" constant="8" id="JQj-9o-Jqn"/>
-                            <constraint firstItem="CjC-sB-CKm" firstAttribute="width" secondItem="cBp-gM-7Bk" secondAttribute="width" multiplier="3/4" id="Li9-z5-Mss"/>
+                            <constraint firstItem="VbX-MY-IRM" firstAttribute="bottom" secondItem="bqp-hY-23z" secondAttribute="bottom" constant="16" id="JQj-9o-Jqn"/>
+                            <constraint firstItem="CjC-sB-CKm" firstAttribute="width" secondItem="cBp-gM-7Bk" secondAttribute="width" multiplier="7/8" id="Li9-z5-Mss"/>
                             <constraint firstItem="erK-vr-uEr" firstAttribute="width" secondItem="cBp-gM-7Bk" secondAttribute="width" id="ZNX-PO-d8y"/>
                             <constraint firstItem="erK-vr-uEr" firstAttribute="centerX" secondItem="VbX-MY-IRM" secondAttribute="centerX" id="dIz-sx-QNW"/>
                             <constraint firstItem="oOl-10-hGI" firstAttribute="width" secondItem="cBp-gM-7Bk" secondAttribute="width" id="ggY-6Z-hHZ"/>
@@ -147,7 +147,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Paper Ball" width="671" height="666"/>
         <image name="Trash Icon" width="1118" height="1432"/>
+        <image name="papertobin" width="1418" height="1015"/>
     </resources>
 </document>
