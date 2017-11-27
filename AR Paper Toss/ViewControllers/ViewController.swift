@@ -158,6 +158,13 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate, planeDetected
     func updatePlaneDetectedUI() {
         DispatchQueue.main.async {
             self.instructionsLabel.text = "Surface detected! Press the +/- button to place objects"
+            self.addObjectButton.isEnabled = true
+        }
+    }
+    
+    func updateSurfaceDetectedUI() {
+        DispatchQueue.main.async {
+            self.instructionsLabel.text = "Detecting..."
         }
     }
     
