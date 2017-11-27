@@ -17,6 +17,10 @@ import ARKit
 class FocusSquare: SCNNode {
     // MARK: - Types
     
+    weak var delegate: planeDetectedDelegate?
+    var delegateHasBeenNotifiedOfPlaneDetected: Bool = false
+    var delegateHasBeenNotifiedOfSurfaceDetected: Bool = false
+    
     enum State {
         case initializing
         case featuresDetected(anchorPosition: float3, camera: ARCamera?)
@@ -180,6 +184,10 @@ class FocusSquare: SCNNode {
         performOpenAnimation()
         recentFocusSquarePositions.append(position)
         updateTransform(for: position, camera: camera)
+        if !delegateHasBeenNotifiedOfSurfaceDetected {
+        delegate?.updateSurfaceDetectedUI()
+           delegateHasBeenNotifiedOfSurfaceDetected = true
+        }
     }
     
     /// Called when a plane has been detected.
@@ -188,6 +196,11 @@ class FocusSquare: SCNNode {
         anchorsOfVisitedPlanes.insert(planeAnchor)
         recentFocusSquarePositions.append(position)
         updateTransform(for: position, camera: camera)
+        if !delegateHasBeenNotifiedOfPlaneDetected {
+        delegate?.updatePlaneDetectedUI()
+            delegateHasBeenNotifiedOfPlaneDetected = true
+        }
+        
     }
     
     // MARK: Helper Methods
@@ -435,6 +448,13 @@ extension FocusSquare.State: Equatable {
             return false
         }
     }
+}
+
+protocol planeDetectedDelegate: class {
+    
+    func updatePlaneDetectedUI()
+    
+    func updateSurfaceDetectedUI()
 }
 
 

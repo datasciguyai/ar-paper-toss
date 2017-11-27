@@ -17,11 +17,10 @@ enum BitMaskCategory: Int {
     
 }
 
-class ViewController: UIViewController, SCNPhysicsContactDelegate {
+class ViewController: UIViewController, SCNPhysicsContactDelegate, planeDetectedDelegate {
     
     @IBOutlet weak var scoreLabel: UILabel!
     
-    //kaden added begins
     
     
     let fire = SCNParticleSystem(named: "Models.scnassets/Paper Ball/fire.scnp", inDirectory: nil)
@@ -31,7 +30,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
     var paperBalls: [SCNNode] = []
     var scoredNodes: [SCNNode] = []
     var paperBinPlaced = false
-    var newHighScore = #imageLiteral(resourceName: "New High Score")
+    let impact = UIImpactFeedbackGenerator()
 
     
     
@@ -81,7 +80,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
 
     }
     
-    let impact = UIImpactFeedbackGenerator()
+
     
     func madeIt(nodeA: SCNNode, nodeB: SCNNode) {
         
@@ -160,13 +159,27 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
         sceneView.delegate = self
         setupCamera()
         let configuration = ARWorldTrackingConfiguration()
-        
+        self.instructionsLabel.text = "Move camera around to detect a playing surface"
+        focusSquare.delegate = self
         sceneView.scene.rootNode.addChildNode(focusSquare)
         self.sceneView.session.run(configuration)
         self.sceneView.scene.physicsWorld.contactDelegate = self
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGestureRecognizer(sender:)))
         sceneView.addGestureRecognizer(panGestureRecognizer)
         
+    }
+    
+    func updatePlaneDetectedUI() {
+        DispatchQueue.main.async {
+            self.instructionsLabel.text = "Surface detected! Press the +/- button to place objects"
+            self.addObjectButton.isEnabled = true
+        }
+    }
+    
+    func updateSurfaceDetectedUI() {
+        DispatchQueue.main.async {
+            self.instructionsLabel.text = "Detecting..."
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -177,7 +190,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
         super.viewWillAppear(animated)
         let configuration = ARWorldTrackingConfiguration()
 //        self.sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
-//        sceneView.autoenablesDefaultLighting = true
+        sceneView.autoenablesDefaultLighting = true
         sceneView.session.run(configuration)
     }
     
@@ -249,7 +262,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
             currentScoreLabel.isHidden = false
         } else {
             focusSquare.unhide()
-            instructionsLabel.text = "Move camera around to detect floor and then push +/- to add a bin"
+        // instructionsLabel.text = "Move camera around to detect floor and then push +/- to add a bin"
             currentScoreLabel.isHidden = true
             moveBinUILabel.isHidden = true
         }
