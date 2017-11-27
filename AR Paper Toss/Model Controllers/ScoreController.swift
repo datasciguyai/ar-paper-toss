@@ -12,6 +12,7 @@ import Foundation
 class ScoreController {
     private let highScoreKey = "highScore"
     static let shared = ScoreController()
+    var highScoreForFireBall = false
     
     var currentScore = 0
     
@@ -37,6 +38,7 @@ class ScoreController {
     
     func missed() {
         currentScore = 0
+        highScoreForFireBall = false
         print("\(currentScore)")
     }
     

@@ -23,6 +23,8 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
     
     //kaden added begins
     
+    
+    let fire = SCNParticleSystem(named: "Models.scnassets/Paper Ball/fire.scnp", inDirectory: nil)
     var cylinder: SCNNode?
     var tube: SCNNode?
     var floor: SCNNode?
@@ -31,11 +33,17 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
     var paperBinPlaced = false
     var newHighScore = #imageLiteral(resourceName: "New High Score")
 
+    
+    
+    
     func physicsWorld(_ world: SCNPhysicsWorld, didBegin contact: SCNPhysicsContact) {
         let nodeA = contact.nodeA
         let nodeB = contact.nodeB
         missedIt(nodeA: nodeA, nodeB: nodeB)
         madeIt(nodeA: nodeA, nodeB: nodeB)
+        
+        
+        
     }
     
     func missedIt(nodeA: SCNNode, nodeB: SCNNode) {
@@ -95,8 +103,11 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
                         self.impact.impactOccurred()
                         if ScoreController.shared.currentScore >= ScoreController.shared.highScore.score {
                             self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore) 🏅"
+                            ScoreController.shared.highScoreForFireBall = true
+                            
                         } else {
                             self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore)"
+                            
                         }
                         self.reloadInputViews()
                     }
@@ -109,8 +120,11 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
                         self.impact.impactOccurred()
                         if ScoreController.shared.currentScore >= ScoreController.shared.highScore.score {
                             self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore) 🏅"
+                            ScoreController.shared.highScoreForFireBall = true
+                            
                         } else {
-                        self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore)"
+                            self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore)"
+                            
                         }
                         self.reloadInputViews()
                     }
@@ -146,7 +160,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
         sceneView.delegate = self
         setupCamera()
         let configuration = ARWorldTrackingConfiguration()
-
+        
         sceneView.scene.rootNode.addChildNode(focusSquare)
         self.sceneView.session.run(configuration)
         self.sceneView.scene.physicsWorld.contactDelegate = self
@@ -189,6 +203,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate {
             ballNode.name = "paperBall"
             ballNode.physicsBody?.applyForce(SCNVector3(orientation.x * Float(velocity), orientation.y * Float(-velocity), orientation.z * Float(velocity)), asImpulse: true)
             arScene.scene.rootNode.addChildNode(ballNode)
+            
             paperBalls.append(ballNode)
                 if paperBalls.count > 75 {
                     paperBalls.first?.removeFromParentNode()
