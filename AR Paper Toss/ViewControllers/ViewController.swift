@@ -157,7 +157,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate, planeDetected
     
     func updatePlaneDetectedUI() {
         DispatchQueue.main.async {
-            self.instructionsLabel.text = "Surface detected! Press the +/- button to place bin"
+            self.instructionsLabel.text = "Surface detected! Press the +/- button to place objects"
         }
     }
     
