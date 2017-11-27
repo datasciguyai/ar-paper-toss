@@ -19,6 +19,7 @@ class FocusSquare: SCNNode {
     
     weak var delegate: planeDetectedDelegate?
     var delegateHasBeenNotifiedOfPlaneDetected: Bool = false
+    var delegateHasBeenNotifiedOfSurfaceDetected: Bool = false
     
     enum State {
         case initializing
@@ -183,6 +184,10 @@ class FocusSquare: SCNNode {
         performOpenAnimation()
         recentFocusSquarePositions.append(position)
         updateTransform(for: position, camera: camera)
+        if !delegateHasBeenNotifiedOfSurfaceDetected {
+        delegate?.updateSurfaceDetectedUI()
+           delegateHasBeenNotifiedOfSurfaceDetected = true
+        }
     }
     
     /// Called when a plane has been detected.
@@ -448,6 +453,8 @@ extension FocusSquare.State: Equatable {
 protocol planeDetectedDelegate: class {
     
     func updatePlaneDetectedUI()
+    
+    func updateSurfaceDetectedUI()
 }
 
 

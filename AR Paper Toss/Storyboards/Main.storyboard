@@ -45,7 +45,7 @@
                                     <segue destination="cGh-R1-hoQ" kind="show" id="Mz5-5N-Ie6"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GY8-D0-SCK">
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GY8-D0-SCK">
                                 <rect key="frame" x="285" y="688" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="T3k-om-StV"/>
@@ -100,6 +100,7 @@
                         <viewLayoutGuide key="safeArea" id="HAU-y0-gOq"/>
                     </view>
                     <connections>
+                        <outlet property="addObjectButton" destination="GY8-D0-SCK" id="B2h-eu-3gS"/>
                         <outlet property="currentScoreLabel" destination="I06-e6-1bI" id="bCX-NN-EbT"/>
                         <outlet property="instructionsLabel" destination="jn5-To-3lk" id="bGT-Y4-21A"/>
                         <outlet property="moveBinUILabel" destination="4lY-Is-HdY" id="1BF-dZ-Zkk"/>
