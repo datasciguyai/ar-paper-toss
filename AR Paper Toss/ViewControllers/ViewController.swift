@@ -29,6 +29,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate, planeDetected
     var floor: SCNNode?
     var paperBalls: [SCNNode] = []
     var scoredNodes: [SCNNode] = []
+    var bombedNodes: [SCNNode] = []
     var paperBinPlaced = false
     let impact = UIImpactFeedbackGenerator()
 
@@ -40,6 +41,39 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate, planeDetected
         let nodeB = contact.nodeB
         missedIt(nodeA: nodeA, nodeB: nodeB)
         madeIt(nodeA: nodeA, nodeB: nodeB)
+        
+//        if nodeA.name == "paperBall"{
+//            if !bombedNodes.contains(nodeA) {
+//                bombedNodes.append(nodeA)
+//                let explosion = SCNParticleSystem(named: "Models.scnassets/Paper Ball/explosion.scnp", inDirectory: nil)
+//                explosion?.loops = false
+//                explosion?.particleLifeSpan = 0.02
+//
+//                let explosionNode = SCNNode()
+//                explosionNode.addParticleSystem(explosion!)
+//                explosionNode.position = contact.contactPoint
+//
+//
+//                self.sceneView.scene.rootNode.addChildNode(explosionNode)
+//            }
+//        }
+//
+//        if nodeB.name == "paperBall"{
+//            if !bombedNodes.contains(nodeB) {
+//                bombedNodes.append(nodeB)
+//                let explosion = SCNParticleSystem(named: "Models.scnassets/Paper Ball/explosion.scnp", inDirectory: nil)
+//                explosion?.loops = false
+//                explosion?.particleLifeSpan = 0.02
+//
+//                let explosionNode = SCNNode()
+//                explosionNode.addParticleSystem(explosion!)
+//                explosionNode.position = contact.contactPoint
+//
+//
+//                self.sceneView.scene.rootNode.addChildNode(explosionNode)
+//            }
+//        }
+        
         
         
         
@@ -104,6 +138,9 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate, planeDetected
                             self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore) 🏅"
                             ScoreController.shared.highScoreForFireBall = true
                             
+                            
+                            
+                            
                         } else {
                             self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore)"
                             
@@ -120,6 +157,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate, planeDetected
                         if ScoreController.shared.currentScore >= ScoreController.shared.highScore.score {
                             self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore) 🏅"
                             ScoreController.shared.highScoreForFireBall = true
+
                             
                         } else {
                             self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore)"
@@ -216,8 +254,10 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate, planeDetected
             ballNode.name = "paperBall"
             ballNode.physicsBody?.applyForce(SCNVector3(orientation.x * Float(velocity), orientation.y * Float(-velocity), orientation.z * Float(velocity)), asImpulse: true)
             arScene.scene.rootNode.addChildNode(ballNode)
-            
-            paperBalls.append(ballNode)
+//            guard let fire = fire else { return }
+//            fire.particleSize = 0.00000000000001
+//            ballNode.addParticleSystem(fire)
+//            paperBalls.append(ballNode)
                 if paperBalls.count > 75 {
                     paperBalls.first?.removeFromParentNode()
                     self.paperBalls.removeFirst()
