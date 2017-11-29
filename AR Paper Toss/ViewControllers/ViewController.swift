@@ -131,39 +131,30 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate, planeDetected
             if nodeA.name == "paperBall" {
                 if !scoredNodes.contains(nodeA) {
                     scoredNodes.append(nodeA)
-                    ScoreController.shared.addScore()
                     DispatchQueue.main.async {
                         self.impact.impactOccurred()
-                        
-                        if ScoreController.shared.currentScore >= ScoreController.shared.highScore.score {
-                            self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore) 🏅"
-                            ScoreController.shared.highScoreForFireBall = true
-                            
-                            
-                            
-                            
+                        if ScoreController.shared.currentScore + 1 > ScoreController.shared.highScore.score {
+                            self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore + 1) 🏅"
                         } else {
-                            self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore)"
-                            
+                            self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore + 1)"
                         }
+                        
+                        ScoreController.shared.addScore()
                         self.reloadInputViews()
                     }
                 }
             } else if nodeB.name == "paperBall" {
                 if !scoredNodes.contains(nodeB) {
                     scoredNodes.append(nodeB)
-                    ScoreController.shared.addScore()
+                    
                     DispatchQueue.main.async {
                         self.impact.impactOccurred()
-                        if ScoreController.shared.currentScore >= ScoreController.shared.highScore.score {
-                            self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore) 🏅"
-                            ScoreController.shared.highScoreForFireBall = true
-
-                            
+                        if ScoreController.shared.currentScore + 1 > ScoreController.shared.highScore.score {
+                            self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore + 1) 🏅"
                         } else {
-                            self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore)"
-                            
+                            self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore + 1)"
                         }
+                        ScoreController.shared.addScore()
                         self.reloadInputViews()
                     }
                 }
