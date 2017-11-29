@@ -16,7 +16,7 @@ enum BitMaskCategory: Int {
     case floor = 14
     
 }
-
+// Kaden is cool
 class ViewController: UIViewController, SCNPhysicsContactDelegate, planeDetectedDelegate {
     
     @IBOutlet weak var scoreLabel: UILabel!
