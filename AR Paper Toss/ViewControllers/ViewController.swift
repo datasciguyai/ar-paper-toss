@@ -134,6 +134,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate, planeDetected
                     ScoreController.shared.addScore()
                     DispatchQueue.main.async {
                         self.impact.impactOccurred()
+                        
                         if ScoreController.shared.currentScore >= ScoreController.shared.highScore.score {
                             self.scoreLabel.text = "Score: \(ScoreController.shared.currentScore) 🏅"
                             ScoreController.shared.highScoreForFireBall = true

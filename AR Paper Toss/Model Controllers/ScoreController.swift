@@ -29,6 +29,7 @@ class ScoreController {
     }
     
     func addScore() {
+        
         currentScore += 1
         if highScore.score < currentScore {
             highScore.score = currentScore
