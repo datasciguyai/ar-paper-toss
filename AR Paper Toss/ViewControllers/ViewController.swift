@@ -142,6 +142,10 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate, planeDetected
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(appMovedToBackground), name: Notification.Name.UIApplicationWillResignActive, object: nil)
+    
+        
         sceneView.delegate = self
         setupCamera()
         let configuration = ARWorldTrackingConfiguration()
@@ -153,6 +157,10 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate, planeDetected
         let panGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(handlePanGestureRecognizer(sender:)))
         sceneView.addGestureRecognizer(panGestureRecognizer)
         
+    }
+    
+    @objc func appMovedToBackground() {
+        virtualObjectLoader.removeAllVirtualObjects()
     }
     
     func updatePlaneDetectedUI() {
