@@ -53,10 +53,12 @@ extension ViewController: VirtualObjectSelectionViewControllerDelegate {
             fatalError("Programmer error: Failed to lookup virtual object in scene.")
         }
         virtualObjectLoader.removeVirtualObject(at: objectIndex)
+        if object.modelName == "Classic Bin" {
         for balls in paperBalls {
             balls.removeFromParentNode()
         }
         paperBalls.removeAll()
-        paperBinPlaced = false
+            paperBinPlaced = false
+        }
     }
 }
