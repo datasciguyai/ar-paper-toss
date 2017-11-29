@@ -163,6 +163,9 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate, planeDetected
     
     @objc func appMovedToBackground() {
         virtualObjectLoader.removeAllVirtualObjects()
+        for balls in paperBalls {
+            balls.removeFromParentNode()
+        }
     }
     
     func updatePlaneDetectedUI() {
