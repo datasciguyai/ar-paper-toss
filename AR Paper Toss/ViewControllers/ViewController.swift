@@ -218,7 +218,7 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate, planeDetected
             ballNode.physicsBody?.applyForce(SCNVector3(orientation.x * Float(velocity), orientation.y * Float(-velocity), orientation.z * Float(velocity)), asImpulse: true)
             arScene.scene.rootNode.addChildNode(ballNode)
             paperBalls.append(ballNode)
-                if paperBalls.count > 75 {
+                if paperBalls.count > 35 {
                     paperBalls.first?.removeFromParentNode()
                     self.paperBalls.removeFirst()
                 }
