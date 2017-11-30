@@ -19,6 +19,8 @@ extension ViewController: VirtualObjectSelectionViewControllerDelegate {
      - Tag: PlaceVirtualObject
      */
     func placeVirtualObject(_ virtualObject: VirtualObject) {
+
+        moveBinUILabel.text = "Move objects around by dragging with two fingers"
         moveBinUILabel.text = "Move object by dragging with two fingers"
         moveBinUILabel.isHidden = false
         guard let cameraTransform = session.currentFrame?.camera.transform,
