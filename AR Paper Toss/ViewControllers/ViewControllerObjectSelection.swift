@@ -19,7 +19,7 @@ extension ViewController: VirtualObjectSelectionViewControllerDelegate {
      - Tag: PlaceVirtualObject
      */
     func placeVirtualObject(_ virtualObject: VirtualObject) {
-
+        
         moveBinUILabel.text = "Move objects around by dragging with two fingers"
         moveBinUILabel.text = "Move object by dragging with two fingers"
         moveBinUILabel.isHidden = false
@@ -42,7 +42,9 @@ extension ViewController: VirtualObjectSelectionViewControllerDelegate {
         virtualObjectLoader.loadVirtualObject(object, loadedHandler: { [unowned self] loadedObject in
             DispatchQueue.main.async {
                 self.placeVirtualObject(loadedObject)
-                self.paperBinPlaced = true
+                if object.modelName == "Classic Bin" {
+                    self.paperBinPlaced = true
+                }
                 ScoreController.shared.missed()
             }
         })
@@ -54,10 +56,10 @@ extension ViewController: VirtualObjectSelectionViewControllerDelegate {
         }
         virtualObjectLoader.removeVirtualObject(at: objectIndex)
         if object.modelName == "Classic Bin" {
-        for balls in paperBalls {
-            balls.removeFromParentNode()
-        }
-        paperBalls.removeAll()
+            for balls in paperBalls {
+                balls.removeFromParentNode()
+            }
+            paperBalls.removeAll()
             paperBinPlaced = false
         }
     }

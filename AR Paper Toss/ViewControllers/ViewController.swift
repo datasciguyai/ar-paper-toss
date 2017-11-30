@@ -166,6 +166,8 @@ class ViewController: UIViewController, SCNPhysicsContactDelegate, planeDetected
         for balls in paperBalls {
             balls.removeFromParentNode()
         }
+        paperBalls.removeAll()
+        paperBinPlaced = false
     }
     
     func updatePlaneDetectedUI() {
